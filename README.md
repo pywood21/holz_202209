@@ -13,8 +13,6 @@ quantitative and accurate analysis of local deformation of anatomical features d
 the mechanical test is an important subject. However, due to its technical
 difficulty, only a few studies around this topic have been conducted.
 
-
-
 On the other hand, with the development of computer vision in the
 field of artificial intelligence, the semantic segmentation has been proposed
 as a promising approach to label each pixel of an image with a corresponding
@@ -22,8 +20,6 @@ class of what is represented. If such approach can be applied into the field of
 wood science, it provides a possibility to simultaneously analyze almost all
 local changes in anatomical features and their interaction during the mechanical
 test.
-
-
 
 Therefore, as a preliminary try in this study, the semantic
 segmentation model has been built to conduct partitioning of anatomical
