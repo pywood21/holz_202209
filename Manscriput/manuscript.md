@@ -10,8 +10,6 @@ Affilliations: Graduate School of Agriculture, Kyoto University,
 
 E-mail: chenshuoye@gmail.com
 
-
-
 ---
 
 ## Abstract
@@ -36,27 +34,31 @@ Cell wall deformation, Mechanical property, Semantic segmentation, U-net, Comput
 
 #### 2.1 specimen preparation
 
-   Hinoki (*Chamaecyparis obtusa*) was used in this study. The 5 specimens of flat-swan, quarter-swan and rift-swan were prepared with the dimension of 10 mm (L) x 20 mm (width) x 1.5 mm (thickness). The cross section was smoothened by a sliding microtome (Yamato, co Ltd...). Then, all prepared specimens were conditioned at 60% RH and 25°C for more than two weeks.
+   Hinoki (*Chamaecyparis obtusa*) was used in this study. Three types of (flat-swan, rift-swan and quarter-swan) samples were firstly prepared considering their orientation of annual ring by visual confirmation. The annual ring aligned at horizontal direction and vertical direction were 0° and 90°, respectively. The sample with the angle of annual ring of 0° to 30° was defined as flat-swan, 30° to 60° was defined as rift-swan and 60° to 90° were defined as quarter-swan. 
+
+    After that, the 5 specimens of flat-swan, quarter-swan and rift-swan, respectively, were prepared with the dimension of 10 mm (longitudinal) x 20 mm (width) x 1.5 mm (thickness). Then, the cross section of all specimens were smoothed by a sliding microtome (Yamato, co Ltd...). 
+
+    Before the micro three-point bending, all specimens were conditioned at a plastic glove box at 60% relative humidity (RH) and 25°C by using sodium bromide solution for more than two weeks.
 
 #### 2.2 micro three-point bending test
 
-   The specimen was horizontally bent by the customized metal jig, while a stereo-microscope (Lecia DMS100, ) was set vertically on the top of the specimen to record the deformation of the cross-section. The test speed was 1 mm/min and the test was conducted at 60% RH and 25°C. (Figure for illustration of appratus)
+    After the conditioning, all specimens were subjected to the micro three-point bending test. The Fig. A customized metal jig was used for the test. A motor () with test speed of 1mm/min was used to horizontally bend the specimen. And a 100N load cell () was used to record the force, the sampling speed is 1Hz. 
+
+    During the test, a stereo-microscope (Leica DMS300, Leica Camera AG, Germany) was used to record deformation of wood cell wall by video mode with 30 fps. The resolution was 1080p and the length of one pixel is equal to about 2.09 *µ*m. All experiment was conducted at 60-65% RH and 25 to 27°C.
 
 #### 2.3 building deep learning based semantic segmentation model
 
-    The recored 30 fps video , one image per sec was extracted from the recored video from stereo-microscope. 
+    After the video taking during the bending test, the first image at every second was captured for preparing the image sequence. 
 
-    The 12 original images with 256 pixels x 256 pixels were cropped from image sequence recorded by a stereo-microscope. The watershed segmentation was applied for label the boundary of wood cell wall. The unlabeled part was 
-
-    Their corresponding ground truth masks with cell wall boundary labeled in white and background labeled in black were manually prepared. Finally, The 12 sets of original image and corresponding ground truth mask were used for building semantic segmentation model. And the asymmetric U-net architecture was used for the model training. (Figure for )
+    The 12 original images with 256 pixels x 256 pixels were cropped from the image sequence recorded by. The watershed segmentation was firstly applied for label the boundary of wood cell wall. The unlabeled part was manually modified to make their corresponding ground truth masks with cell wall boundary labeled in white and background labeled in black were manually prepared. Finally, The 12 sets of original image and corresponding ground truth mask were used for building semantic segmentation model. And the asymmetric U-net architecture was used for the model training. (Figure for )
 
 #### 2.4 image prediction and tracking of cell wall deformation
 
-   After model training, the model with the patch blending algorithm implemented by Vooban were used to partition cell walls in the image sequence with 1920 pixels x 1080 pixels. After predicting image sequence, watershed segmentation was applied to achieve the instance segmentation of cell walls. Finally, a tracking algorithm (Crocker-Grier linking algorithm) was used to link the same cell walls exist in each image.
+   After model training, the model with the patch blending algorithm implemented by Vooban were used to partition all cell walls in the image sequence with 1920 pixels x 1080 pixels. After predicting image sequence, watershed segmentation was applied again to achieve the instance segmentation of cell walls. Finally, a tracking algorithm (Crocker-Grier linking algorithm) implemented by trackpy () was used to link the same cell walls exist in each image.
 
 #### 2.5 parameters measurement for cell wall deformation analysis
 
-    Scikit-image was used to measured the area, eccentricity, major/minor axis length, vertical/horizontal length of bounding box and maxium feret of each cell wall for analyzing their intensity of cell wall deformation. And their change rate during the bending test was also calucated based on the following equation:j
+    After the tracking of cell wall, scikit-image was used to measured the area, eccentricity, major/minor axis length, vertical/horizontal length of bounding box and maxium feret of each cell wall for analyzing their intensity of cell wall deformation. And their change rate during the bending test was also calucated based on the following equation:j
 
 $$
 Change = [(parameter_k[i] - parameter_k[0]) / parameter_k[0]] * 100
@@ -68,15 +70,9 @@ $$
 
 #### 3.1 mechanical properties of flat-swan, quarter-swan and rift-swan
 
-
-
 #### 3.2 Validation of U-net model and cell wall deformation tracking
 
-
-
 #### 3.3 Visualization of cell wall deformation
-
-#### 
 
 #### 3.4 Relationship between changes in intensity of cell wall deformation and Stress-strain curve
 
