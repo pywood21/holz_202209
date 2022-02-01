@@ -6,7 +6,7 @@
 
 Authors: Shuoye Chen, XXXX, Junji Sugiyama
 
-Affilliations: Graduate School of Agriculture, Kyoto University, 
+Affiliations: Graduate School of Agriculture, Kyoto University, 
 
 E-mail: chenshuoye@gmail.com
 
@@ -22,13 +22,19 @@ Cell wall deformation, Mechanical property, Semantic segmentation, U-net, Comput
 
 ## 1. introduction
 
-   As a natural cellular material, wood has complex structure with different cell types (anatomical features) acting together to serve the needs of living tree. Those features have large variation with different wood species that highly influence the mechanical properties of wood. To unveil the relationship between anatomical features and mechanical behavior of wood, the quantitative and accurate analysis of local deformation of anatomical features during the mechanical test is an important subject. However, due to its technical difficulty, only a few studies around this topic have been conducted.
+   As a natural cellular material, wood has complex structure with different cell types (anatomical features) acting together to serve the needs of living tree. Those features have large variation with different wood species that highly influence the mechanical properties of wood. 
+
+    The anatomical features influence a lot on the mechanical properties of transverse direction of wood. Up to now, several researches have been conducted to understand their relationship: 
+
+    Main approach#1: direct observation of deformed wood cell wall by microscope during or after the mechanical test. Limitation: Only the focused part were analyzed, ( Ando sensei;, ....), the analysis was not always quantitative. 
+
+    Main approach#2:  simulation of deformation of cell wall by finite element method (FEM). Limitation: only the homogenized geometry of wood cell wall  were used. (Watanabe et al., Gibson et al. ...)
+
+    To completely unveil the relationship between anatomical features and mechanical behavior of wood, the quantitative and accurate analysis of local deformation of anatomical features during the mechanical test is an important subject. However, due to its technical difficulty, only a few studies around this topic have been conducted. 
 
    On the other hand, with the development of computer vision in the field of artificial intelligence, the semantic segmentation has been proposed as a promising approach to label each pixel of an image with a corresponding class of what is represented. If such approach can be applied into the field of wood science, it provides a possibility to simultaneously analyze almost all local changes in anatomical features and their interaction during the mechanical test.
 
    Therefore, as a pioneering try in this study, the semantic segmentation model has been built to conduct partitioning of anatomical features, and their local deformation during the micro three-point bending test were precisely analyzed.
-
----
 
 ## 2. materials and method
 
@@ -64,26 +70,32 @@ $$
 Change = [(parameter_k[i] - parameter_k[0]) / parameter_k[0]] * 100
 $$
 
----
-
 ## 3. results and discussion
 
 #### 3.1 mechanical properties of flat-swan, quarter-swan and rift-swan
 
+discuss the force-displacement curve, modulus of elasticity and modulus of rupture
+
 #### 3.2 Validation of U-net model and cell wall deformation tracking
 
-#### 3.3 Visualization of cell wall deformation
+discuss the training results (loss vs. epoch, accuarcy/f1_score vs. epoch) 
+
+show the predicted mask (problem: the latewood part was not well predicted)
+
+show the trajectories achieved by algorithm 
+
+#### 3.3 Visualization of the intensity of cell wall deformation
+
+show the map with several parameters as example, discuss the cell wall deformation from elastic region to plastic region
 
 #### 3.4 Relationship between changes in intensity of cell wall deformation and Stress-strain curve
 
----
+The variety of the cell wall deformation pattern and its relationship with  
+
+
 
 ## 4. Conclusion
 
----
-
 ## 5. Reference
-
----
 
 ## 6. Acknowledagement
