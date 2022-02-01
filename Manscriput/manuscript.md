@@ -52,7 +52,7 @@ As a natural cellular material, wood has complex structure with different cell t
 
     During the test, a stereo-microscope (Leica DMS300, Leica Camera AG, Germany) was used to record deformation of wood cell wall by video mode with 30 fps. The resolution was 1080p and the length of one pixel is equal to about 2.09 *µ*m. All experiment was conducted at 60-65% RH and 25 to 27°C.
 
-<img title="" src="file:///Users/chen/Documents/GitHub/Tracking_cell_wall_deformation/Figures/appratus.png" alt="appratus.png" data-align="center" width="456">
+<img title="" src="../Figures/apparatus.png" alt="appratus.png" data-align="center" width="456">
 
 Figure. The illustration of micro three-point bending test. (a) The illustrated apparatus used for the test. (b) Cross section of wood specimen observed by stereo-microscope.
 
