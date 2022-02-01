@@ -22,7 +22,7 @@ Cell wall deformation, Mechanical property, Semantic segmentation, U-net, Comput
 
 ## 1. introduction
 
-   As a natural cellular material, wood has complex structure with different cell types (anatomical features) acting together to serve the needs of living tree. Those features have large variation with different wood species that highly influence the mechanical properties of wood. 
+As a natural cellular material, wood has complex structure with different cell types (anatomical features) acting together to serve the needs of living tree. Those features have large variation with different wood species that highly influence the mechanical properties of wood. 
 
     The anatomical features influence a lot on the mechanical properties of transverse direction of wood. Up to now, several researches have been conducted to understand their relationship: 
 
@@ -51,6 +51,10 @@ Cell wall deformation, Mechanical property, Semantic segmentation, U-net, Comput
     After the conditioning, all specimens were subjected to the micro three-point bending test. The Fig. A customized metal jig was used for the test. A motor () with test speed of 1mm/min was used to horizontally bend the specimen. And a 100N load cell () was used to record the force, the sampling speed is 1Hz. 
 
     During the test, a stereo-microscope (Leica DMS300, Leica Camera AG, Germany) was used to record deformation of wood cell wall by video mode with 30 fps. The resolution was 1080p and the length of one pixel is equal to about 2.09 *µ*m. All experiment was conducted at 60-65% RH and 25 to 27°C.
+
+<img title="" src="file:///Users/chen/Documents/GitHub/Tracking_cell_wall_deformation/Figures/appratus.png" alt="appratus.png" data-align="center" width="456">
+
+Figure. The illustration of micro three-point bending test. (a) The illustrated apparatus used for the test. (b) Cross section of wood specimen observed by stereo-microscope.
 
 #### 2.3 building deep learning based semantic segmentation model
 
@@ -91,8 +95,6 @@ show the map with several parameters as example, discuss the cell wall deformati
 #### 3.4 Relationship between changes in intensity of cell wall deformation and Stress-strain curve
 
 The variety of the cell wall deformation pattern and its relationship with  
-
-
 
 ## 4. Conclusion
 
