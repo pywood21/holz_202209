@@ -1,6 +1,6 @@
 # Title:
 
-# Deformation of wood cell wall during three-point bending test studied by computer vision and machine learning
+# Deformation of wood cell wall during three-point bending test analyzed by computer vision and machine learning
 
 ---
 
@@ -46,29 +46,29 @@ Cell wall deformation, Mechanical property, Semantic segmentation, U-net, Comput
 
     After the conditioning, all specimens were subjected to the micro three-point bending test. The Fig. A customized metal jig was used for the test. A motor () with test speed of 1mm/min was used to horizontally bend the specimen. And a 100N load cell () was used to record the force, the sampling speed is 1Hz. During the test, a stereo-microscope (Leica DMS300, Leica Camera AG, Germany) was used to record deformation of wood cell wall by video mode with 30 fps. The resolution was 1080p and the length of one pixel is equal to about 2.09 *µ*m. All experiment was conducted at 60-65% RH and 25 to 27°C.
 
-<img title="" src="../Figures/apparatus.png" alt="appratus.png" data-align="center" width="694">
+<img title="" src="../Figures/apparatus.png" alt="appratus.png" data-align="inline" width="694">
 
-Figure. The illustration of micro three-point bending test. (a) The illustrated apparatus used for the test. (b) Cross section of wood specimen observed by stereo-microscope.
+Fig. X The illustration of micro three-point bending test. (a) The illustrated apparatus used for the test. (b) Cross section of wood specimen observed by stereo-microscope.
 
 #### 2.3 building deep learning based semantic segmentation model
 
     After the video taking during the bending test, the first image at every second was captured for preparing the image sequence. The 12 original images with 256 pixels x 256 pixels were cropped from the image sequence recorded by. The watershed segmentation was firstly applied for label the boundary of wood cell wall. The unlabeled part was manually modified to make their corresponding ground truth masks with cell wall boundary labeled in white and background labeled in black were manually prepared. Finally, The 12 sets of original image and corresponding ground truth mask were used for building semantic segmentation model. And the asymmetric U-net architecture was used for the model training. (Figure for )
 
-![mask_preparation.png](../Figures/mask_preparation.png)
+<img title="" src="../Figures/mask_preparation.png" alt="mask_preparation.png" data-align="inline">
 
-Figure. Preparation of train set for semantic segmentation model training. (a) Cropped patch of cross section of wood; (b) cell wall boundary labeled mask by watershed segmentation algorithm (c) manually corrected image mask.
+Fig. X Preparation of data set for semantic segmentation model training. (a) Cropped patch of cross section of wood; (b) cell wall boundary labeled mask by watershed segmentation algorithm (c) manually corrected image mask. The scale bar indicates length of 100 micrometer
 
 #### 2.4 image prediction and tracking of cell wall deformation
 
     After model training, the model with the patch blending algorithm implemented by Vooban were used to partition all cell walls in the image sequence with 1920 pixels x 1080 pixels. After predicting image sequence, watershed segmentation was applied again to achieve the instance segmentation of cell walls. Finally, a tracking algorithm (Crocker-Grier linking algorithm) implemented by trackpy () was used to link the same cell walls exist in each image.
 
+![particle_linking.png](../Figures/particle_linking.png)
+
+Fig.X tracking the cell wall deformation during mechanical test. (a) watershed segmentation of predicted image by trained U-net model to achieve instance segmentation; (b) The coordinates of centriods of each cell wall were exacted as the features for particle linking; (c)  trajectories was found by Crocker-Grier linking algorithm.
+
 #### 2.5 parameters measurement for cell wall deformation analysis
 
     After the tracking of cell wall, scikit-image was used to measured the area, eccentricity, major/minor axis length, vertical/horizontal length of bounding box and maximum Feret diameter of each cell wall for analyzing their intensity of cell wall deformation. And their change rate during the bending test was also calculated based on the following equation:
-
-$$
-Change = [(parameter_k[i] - parameter_k[0]) / parameter_k[0]] * 100
-$$
 
 ## 3. results and discussion
 
