@@ -54,7 +54,7 @@ Fig. X The illustration of micro three-point bending test. (a) The illustrated a
 
     After the video taking during the bending test, the first image at every second was captured for preparing the image sequence. The 12 original images with 256 pixels x 256 pixels were cropped from the image sequence recorded by. The watershed segmentation was firstly applied for label the boundary of wood cell wall. The unlabeled part was manually modified to make their corresponding ground truth masks with cell wall boundary labeled in white and background labeled in black were manually prepared. Finally, The 12 sets of original image and corresponding ground truth mask were used for building semantic segmentation model. And the asymmetric U-net architecture was used for the model training. (Figure for )
 
-<img title="" src="../Figures/mask_preparation.png" alt="mask_preparation.png" data-align="inline">
+<img title="" src="../Figures/mask_preparation.png" alt="mask_preparation.png" data-align="inline" width="605">
 
 Fig. X Preparation of data set for semantic segmentation model training. (a) Cropped patch of cross section of wood; (b) cell wall boundary labeled mask by watershed segmentation algorithm (c) manually corrected image mask. The scale bar indicates length of 100 micrometer
 
@@ -62,7 +62,7 @@ Fig. X Preparation of data set for semantic segmentation model training. (a) Cro
 
     After model training, the model with the patch blending algorithm implemented by Vooban were used to partition all cell walls in the image sequence with 1920 pixels x 1080 pixels. After predicting image sequence, watershed segmentation was applied again to achieve the instance segmentation of cell walls. Finally, a tracking algorithm (Crocker-Grier linking algorithm) implemented by trackpy () was used to link the same cell walls exist in each image.
 
-![particle_linking.png](../Figures/particle_linking.png)
+<img src="../Figures/particle_linking.png" title="" alt="particle_linking.png" width="684">
 
 Fig.X tracking the cell wall deformation during mechanical test. (a) watershed segmentation of predicted image by trained U-net model to achieve instance segmentation; (b) The coordinates of centriods of each cell wall were exacted as the features for particle linking; (c)  trajectories was found by Crocker-Grier linking algorithm.
 
