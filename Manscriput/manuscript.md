@@ -78,7 +78,7 @@ Fig.X tracking the cell wall deformation during mechanical test. (a) watershed s
 
 - eccentricity: the eccentricity of the ellipse that has the same second-moments as the region. When it is 0, the ellipse becomes a circle.
 
-- circularity: (4 X pi X area) / (perimeter_crofton^2)
+- circularity: (4 * pi * area) / (perimeter**2)
 
 - major axis length: the length of the major axis of the ellipse that has the same normalized second central moments as the region.
 
@@ -92,7 +92,7 @@ Fig.X tracking the cell wall deformation during mechanical test. (a) watershed s
 
 - aspect ratio #2: horizontal length of bounding box/ vertical length of bounding box
 
-- Max Feret diameter
+- Maxiunm Feret diameter
 
 ## 3. results and discussion
 
