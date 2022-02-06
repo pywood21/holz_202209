@@ -92,7 +92,9 @@ Fig.X tracking the cell wall deformation during mechanical test. (a) watershed s
 
 - aspect ratio #2: horizontal length of bounding box/ vertical length of bounding box
 
-- Maxiunm Feret diameter
+- Maximum Feret diameter
+
+- 
 
 ## 3. results and discussion
 
