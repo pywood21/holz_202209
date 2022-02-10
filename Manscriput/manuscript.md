@@ -102,6 +102,10 @@ Fig.X tracking the cell wall deformation during mechanical test. (a) watershed s
 
 discuss the force-displacement curve, modulus of elasticity and modulus of rupture
 
+<img src="../Figures/dis_moe_mor.png" title="" alt="dis_moe_mor.png" data-align="center">
+
+Fig. X mechanical properties of flat-swan, quarter-swan and rift-swan of hinoki specimens. (a) load and displacement of three types of hinoki specimens during micro three-point test. (b) MOE and MOR of three types of hinoki specimen
+
 #### 3.2 Validation of U-net model and cell wall deformation tracking
 
 discuss the training results (loss vs. epoch, accuracy/f1_score vs. epoch) 
