@@ -112,7 +112,7 @@ discuss the training results (loss vs. epoch, accuracy/f1_score vs. epoch)
 
 show the predicted mask (problem: the latewood part was not well predicted)
 
-<img src="file:///Users/chen/Documents/GitHub/Tracking_cell_wall_deformation/Figures/large_img_predicted.png" title="" alt="large_img_predicted.png" width="401">
+<img title="" src="../Figures/large_img_predicted.png" alt="large_img_predicted.png" width="401">
 
 Fig. X cell wall boundary prediction by trained U-net model. (a) input original image (b) predicted image
 
