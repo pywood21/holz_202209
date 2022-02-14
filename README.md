@@ -1,6 +1,8 @@
 # Tracking_cell_wall_deformation
 
- Accurate and qunatitative analysis of cell wall defomration by computer vision
+ Accurate and quantitative analysis of cell wall deformation by computer vision
+
+This repository is aim to submit current work to international journal (potential journal: Journal of The Royal Society Interface, Plant methods, Scientific reports, Holzforschung, Wood science and technology....).
 
 ### Generation introduction of this repository:
 

@@ -64,7 +64,7 @@ Fig. X Preparation of data set for semantic segmentation model training. (a) Cro
 
 #### 2.4 image prediction and tracking of cell wall deformation
 
-    After model training, the model with the patch blending algorithm implemented by Vooban were used to partition all cell walls in the image sequence with 1920 pixels x 1080 pixels. After predicting image sequence, watershed segmentation was applied again to achieve the instance segmentation of cell walls. Finally, a tracking algorithm (Crocker-Grier linking algorithm) implemented by trackpy () was used to link the same cell walls exist in each image.
+    After model training, the model with the patch blending algorithm implemented by Vooban () were used to partition all cell walls in the image sequence with 1920 pixels x 1080 pixels. After predicting image sequence, watershed segmentation was applied again to achieve the instance segmentation of cell walls. Finally, a tracking algorithm (Crocker-Grier linking algorithm) implemented by trackpy () was used to link the same cell walls exist in each image.
 
 <img title="" src="../Figures/particle_linking.png" alt="particle_linking.png" width="684" data-align="center">
 
@@ -104,7 +104,7 @@ discuss the force-displacement curve, modulus of elasticity and modulus of ruptu
 
 <img src="../Figures/dis_moe_mor.png" title="" alt="dis_moe_mor.png" data-align="center">
 
-Fig. X mechanical properties of flat-swan, quarter-swan and rift-swan of hinoki specimens. (a) load and displacement of three types of hinoki specimens during micro three-point test. (b) MOE and MOR of three types of hinoki specimen
+Fig. X mechanical properties of flat-swan, quarter-swan and rift-swan of hinoki specimens. (a) load and displacement of three types of hinoki specimens during micro three-point test. (b) MOE (modulus of elasticity) and MOR (modulus of rupture) of three types of hinoki specimen; the error bars indicate the standard deviation.
 
 #### 3.2 Validation of U-net model and cell wall deformation tracking
 
@@ -112,9 +112,15 @@ discuss the training results (loss vs. epoch, accuracy/f1_score vs. epoch)
 
 show the predicted mask (problem: the latewood part was not well predicted)
 
-<img title="" src="../Figures/large_img_predicted.png" alt="large_img_predicted.png" width="401">
+![large_img_predicted.png](/Users/chen/Documents/GitHub/Tracking_cell_wall_deformation/Figures/large_img_predicted.png)
 
-Fig. X cell wall boundary prediction by trained U-net model. (a) input original image (b) predicted image
+
+
+Fig. X cell wall boundary prediction by trained U-net model. (a) binary cross entropy loss plotted against the training epochs; (b) input original image; (c) predicted image
+
+<img title="" src="../Figures/partial_deformation.png" alt="partial_deformation.png" data-align="center">
+
+Fig.x typical deformation of wood cell wall for three types of hinoki specimens during micro three-point bending test. (a) cell wall deformation of flat-swan specimen, upper: compression part, lower: tension part; (b) cell wall deformation of quarter-swan specimen, upper: compression part, lower: tension part; (c) cell wall deformation of rift-swan specimen, upper: compression part, lower: tension part. The scale bar indicates 50 \mum
 
 #### 3.3 Visualization of the intensity of cell wall deformation
 
@@ -122,7 +128,7 @@ show the map with several parameters as example, discuss the cell wall deformati
 
 #### 3.4 Relationship between changes in intensity of cell wall deformation and Stress-strain curve
 
-The variety of the cell wall deformation pattern and its relationship with  
+The variety of the cell wall deformation pattern and its relationship with  strain-stress curve
 
 ## 4. Conclusion
 
