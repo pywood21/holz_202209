@@ -93,8 +93,6 @@ Fig.X tracking the cell wall deformation during mechanical test. (a) watershed s
 - aspect ratio #2: horizontal length of bounding box/ vertical length of bounding box
 
 - Maximum Feret diameter
-  
-  
 
 ## 3. results and discussion
 
@@ -112,7 +110,7 @@ discuss the training results (loss vs. epoch, accuracy/f1_score vs. epoch)
 
 show the predicted mask (problem: the latewood part was not well predicted)
 
-<img src="../Figures/large_img_predicted.png" title="" alt="large_img_predicted.png" width="555">
+<img title="" src="../Figures/large_img_predicted.png" alt="large_img_predicted.png" width="545">
 
 Fig. X cell wall boundary prediction by trained U-net model. (a) binary cross entropy loss plotted against the training epochs; (b) input original image; (c) predicted image
 
