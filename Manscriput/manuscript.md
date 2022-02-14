@@ -66,7 +66,7 @@ Fig. X Preparation of data set for semantic segmentation model training. (a) Cro
 
     After model training, the model with the patch blending algorithm implemented by Vooban () were used to partition all cell walls in the image sequence with 1920 pixels x 1080 pixels. After predicting image sequence, watershed segmentation was applied again to achieve the instance segmentation of cell walls. Finally, a tracking algorithm (Crocker-Grier linking algorithm) implemented by trackpy () was used to link the same cell walls exist in each image.
 
-<img title="" src="../Figures/particle_linking.png" alt="particle_linking.png" width="684" data-align="center">
+<img title="" src="../Figures/particle_linking.png" alt="particle_linking.png" width="638" data-align="center">
 
 Fig.X tracking the cell wall deformation during mechanical test. (a) watershed segmentation of predicted image by trained U-net model to achieve instance segmentation; (b) The coordinates of centriods of each cell wall were exacted as the features for particle linking; (c)  trajectories was found by Crocker-Grier linking algorithm.
 
@@ -112,9 +112,7 @@ discuss the training results (loss vs. epoch, accuracy/f1_score vs. epoch)
 
 show the predicted mask (problem: the latewood part was not well predicted)
 
-![large_img_predicted.png](/Users/chen/Documents/GitHub/Tracking_cell_wall_deformation/Figures/large_img_predicted.png)
-
-
+![large_img_predicted.png](../Figures/large_img_predicted.png)
 
 Fig. X cell wall boundary prediction by trained U-net model. (a) binary cross entropy loss plotted against the training epochs; (b) input original image; (c) predicted image
 
