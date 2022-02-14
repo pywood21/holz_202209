@@ -112,11 +112,11 @@ discuss the training results (loss vs. epoch, accuracy/f1_score vs. epoch)
 
 show the predicted mask (problem: the latewood part was not well predicted)
 
-![large_img_predicted.png](../Figures/large_img_predicted.png)
+<img src="../Figures/large_img_predicted.png" title="" alt="large_img_predicted.png" width="555">
 
 Fig. X cell wall boundary prediction by trained U-net model. (a) binary cross entropy loss plotted against the training epochs; (b) input original image; (c) predicted image
 
-<img title="" src="../Figures/partial_deformation.png" alt="partial_deformation.png" data-align="center">
+<img title="" src="../Figures/partial_deformation.png" alt="partial_deformation.png" data-align="center" width="380">
 
 Fig.x typical deformation of wood cell wall for three types of hinoki specimens during micro three-point bending test. (a) cell wall deformation of flat-swan specimen, upper: compression part, lower: tension part; (b) cell wall deformation of quarter-swan specimen, upper: compression part, lower: tension part; (c) cell wall deformation of rift-swan specimen, upper: compression part, lower: tension part. The scale bar indicates 50 \mum
 
