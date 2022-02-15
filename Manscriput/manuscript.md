@@ -22,11 +22,9 @@ Cell wall deformation, Mechanical property, Semantic segmentation, U-net, Comput
 
 ## 1. introduction
 
-    As a natural cellular material, wood has complex structure with different cell types (anatomical features) acting together to serve the needs of living tree. 
+    As a natural cellular material, wood has complex structure with different cell types (anatomical features) acting together to serve the needs of living tree. And wood is an anisotropic material to have excellent mechanical properties in the longitudinal direction, while the transverse direction are quite weak.  
 
-    Those features have large variation with different wood species that highly influence the mechanical properties of wood. 
-
-    The anatomical features influence a lot on the mechanical properties of transverse direction of wood. Up to now, several researches have been conducted to understand their relationship: 
+    The anatomical features influence a lot on the mechanical properties of transverse direction of wood. Up to now, several researches have been conducted to understand their relationship. 
 
     Main approach#1: direct observation of deformed wood cell wall by microscope during or after the mechanical test. Limitation: Only the focused part were analyzed, ( Ando sensei;, ....), the analysis was not always quantitative. 
 
@@ -34,11 +32,11 @@ Cell wall deformation, Mechanical property, Semantic segmentation, U-net, Comput
 
     To completely unveil the relationship between anatomical features and mechanical behavior of wood, the quantitative and accurate analysis of local deformation of anatomical features during the mechanical test is an important subject. However, due to its technical difficulty, only a few studies around this topic have been conducted. 
 
-    On the other hand, with the development of computer vision in the field of artificial intelligence, the semantic segmentation has been proposed as a promising approach to label each pixel of an image with a corresponding class of what is represented. (U-net and)
+    On the other hand, with the development of computer vision in the field of artificial intelligence, the semantic segmentation has been proposed as a promising approach to label each pixel of an image with a corresponding class of what is represented. Recently, the deep-learning based semantic segmentation model has been well developed and those technology that has large field of application and already been adapted to the filed of self-driving vehicles and  analysis of biomedical image for medical diagnosis. 
 
-    If such approach can be applied into the field of wood science, it provides a great possibility to simultaneously analyze almost all local changes in anatomical features and their interaction during the mechanical test.
+    If such approach can be applied for analyzing the cell wall deformation, it provides a great possibility to simultaneously analyze almost all local changes in anatomical features and their interaction during the mechanical test.
 
-    Therefore, in this study, the semantic segmentation model has been built for conducting partition of anatomical features, and their local deformation during the micro three-point bending test were precisely analyzed.
+    Therefore, as a pioneering try in this study, the semantic segmentation model has been built for conducting partition of anatomical features, and their local deformation during the micro three-point bending test were precisely analyzed.
 
 ## 2. materials and method
 
@@ -73,6 +71,10 @@ Fig.X tracking the cell wall deformation during mechanical test. (a) watershed s
 #### 2.5 parameters measurement for cell wall deformation analysis
 
     After the tracking of cell wall, scikit-image was used to measured the area, eccentricity, major/minor axis length, vertical/horizontal length of bounding box and maximum Feret diameter of each cell wall for analyzing their intensity of cell wall deformation (Fig. X). And their rate of change during the bending test was also calculated based on the following equation:
+
+![parameters_calculation.png](../Figures/parameters_calculation.png)
+
+the n indicates the order of the observed image sequence. The i indicates the measured parameters.
 
 <img title="" src="../Figures/parameters_measurment.png" alt="parameters_measurment.png" data-align="center" width="450">
 
