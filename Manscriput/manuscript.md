@@ -74,7 +74,7 @@ Fig.X tracking the cell wall deformation during mechanical test. (a) watershed s
 
     After the tracking of cell wall, scikit-image was used to measured the area, eccentricity, major/minor axis length, vertical/horizontal length of bounding box and maximum Feret diameter of each cell wall for analyzing their intensity of cell wall deformation (Fig. X). And their rate of change during the bending test was also calculated based on the following equation:
 
-<img title="" src="../Figures/parameters_measurment.png" alt="parameters_measurment.png" data-align="center" width="384">
+<img title="" src="../Figures/parameters_measurment.png" alt="parameters_measurment.png" data-align="center" width="450">
 
 Fig. X the measurement parameters to evaluate the intensity of deformation of cell wall
 
