@@ -72,27 +72,11 @@ Fig.X tracking the cell wall deformation during mechanical test. (a) watershed s
 
 #### 2.5 parameters measurement for cell wall deformation analysis
 
-    After the tracking of cell wall, scikit-image was used to measured the area, eccentricity, major/minor axis length, vertical/horizontal length of bounding box and maximum Feret diameter of each cell wall for analyzing their intensity of cell wall deformation. And their rate of change during the bending test was also calculated based on the following equation:
+    After the tracking of cell wall, scikit-image was used to measured the area, eccentricity, major/minor axis length, vertical/horizontal length of bounding box and maximum Feret diameter of each cell wall for analyzing their intensity of cell wall deformation (Fig. X). And their rate of change during the bending test was also calculated based on the following equation:
 
-- area: the area of the measured region
+<img title="" src="../Figures/parameters_measurment.png" alt="parameters_measurment.png" data-align="center" width="384">
 
-- eccentricity: the eccentricity of the ellipse that has the same second-moments as the region. When it is 0, the ellipse becomes a circle.
-
-- circularity: (4 * pi * area) / (perimeter**2)
-
-- major axis length: the length of the major axis of the ellipse that has the same normalized second central moments as the region.
-
-- minor axis length: the length of the minor axis of the ellipse that has the same normalized second central moments as the region.
-
-- aspect ratio #1: major axis length/minor axis length
-
-- horizontal length of bounding box
-
-- vertical length of bounding box
-
-- aspect ratio #2: horizontal length of bounding box/ vertical length of bounding box
-
-- Maximum Feret diameter
+Fig. X the measurement parameters to evaluate the intensity of deformation of cell wall
 
 ## 3. results and discussion
 
@@ -113,6 +97,12 @@ show the predicted mask (problem: the latewood part was not well predicted)
 <img title="" src="../Figures/large_img_predicted.png" alt="large_img_predicted.png" width="545">
 
 Fig. X cell wall boundary prediction by trained U-net model. (a) binary cross entropy loss plotted against the training epochs; (b) input original image; (c) predicted image
+
+Table. X the values of metrics for predicted images by trained U-net model
+
+| accuracy     | f1_score     | recall       | precision    |
+|:------------:|:------------:|:------------:|:------------:|
+| 0.92 (0.006) | 0.82 (0.017) | 0.82 (0.019) | 0.82 (0.017) |
 
 <img title="" src="../Figures/partial_deformation.png" alt="partial_deformation.png" data-align="center" width="380">
 
