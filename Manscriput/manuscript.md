@@ -22,17 +22,33 @@ Cell wall deformation, Mechanical property, Semantic segmentation, U-net, Comput
 
 ## 1. introduction
 
-    As a natural cellular material, wood has complex structure with different cell types (anatomical features) acting together to serve the needs of living tree. And wood is an anisotropic material to have excellent mechanical properties in the longitudinal direction, while the transverse direction are quite weak.  
+    Wood is a natural cellular material, it has complex structure with different cell types (anatomical features) acting together to serve the needs of living tree []. Also, as an anisotropic material,  wood has excellent mechanical properties parallel to the grain ( longitudinal direction), while its mechanical properties perpendicular to the grain (transverse direction) are relatively weak and varied among different wood species with relation to their unique anatomical features []. 
 
-    The anatomical features influence a lot on the mechanical properties of transverse direction of wood. Up to now, several researches have been conducted to understand their relationship. 
+    Up to now, several approaches have been developed to understand how anatomical features affect the mechanical behavior of wood in transverse direction. The first approach is the direction microscopic observation of deformation of anatomical features during or after the mechanical test. 
 
-    Main approach#1: direct observation of deformed wood cell wall by microscope during or after the mechanical test. Limitation: Only the focused part were analyzed, ( Ando sensei;, ....), the analysis was not always quantitative. 
+    Ando and Onda (1999) used wet-type scanning electron microscope (SEM) to observe the compression of wood cell wall. Combing with image analysis, it was found that the first fracture of cell wall occurred in one tangential row of earlywood tracheids just after the load displacement curve exceeded the proportional limit. Müller et al. (2003) observed cell deformation of both softwood (spruce) and hardwood (oak and beech) at different yielding stage of compression test by using SEM and light microscope. They have found that compression behaviors are different among different wood species due to its unique anatomical features. 
 
-    Main approach#2:  simulation of deformation of cell wall by finite element method (FEM). Limitation: only the homogenized geometry of wood cell wall  were used. (Watanabe et al., Gibson et al. ...)
+The radial compression of spruce is limited by the critical Euler buckling load of only a few cells closely behind the ring border. The compression behavior of oak is determined by the buckling of the earlywood vessels and vasicentric tissue, whereas beech is characterized by the densification of the vessels at high plastic deformations. 
 
-    To completely unveil the relationship between anatomical features and mechanical behavior of wood, the quantitative and accurate analysis of local deformation of anatomical features during the mechanical test is an important subject. However, due to its technical difficulty, only a few studies around this topic have been conducted. 
+Hwang et al. (2021) used the replica method  
 
-    On the other hand, with the development of computer vision in the field of artificial intelligence, the semantic segmentation has been proposed as a promising approach to label each pixel of an image with a corresponding class of what is represented. Recently, the deep-learning based semantic segmentation model has been well developed and those technology that has large field of application and already been adapted to the filed of self-driving vehicles and  analysis of biomedical image for medical diagnosis. 
+    The second approach is the normalization of anatomical features for the mechanical analysis for cellular solids. 
+
+    Gibson (mechanics of cellular solids)
+
+    Watanabe (FFT)
+
+    Ando 
+
+
+
+    The third main approach is applying mechanical simulation such finite element method (FEM) and molecular mechanics for understanding the mechanical properties of wood. 
+
+    Limitation of approach #2 and #3: Only the homogenized geometry of wood has been analyzed. 
+
+    To completely unveil the relationship between anatomical features and mechanical behavior of wood, the quantitative and accurate analysis of local deformation of anatomical features during the mechanical test is an important subject. However, due to its technical difficulty for analyzing deformation of cell wall one by one, only a few studies around this topic have been conducted. 
+
+    On the other hand, with the development of computer vision in the field of artificial intelligence, the semantic segmentation has been proposed as a promising approach to label each pixel of an image with a corresponding class of what is represented. Recently, the deep-learning based semantic segmentation model has been developed and those technology that has large field of application and already been adapted to for self-driving vehicles and  analysis of biomedical image for medical diagnosis. 
 
     If such approach can be applied for analyzing the cell wall deformation, it provides a great possibility to simultaneously analyze almost all local changes in anatomical features and their interaction during the mechanical test.
 
@@ -54,7 +70,7 @@ Fig. X The illustration of micro three-point bending test. (a) The illustrated a
 
 #### 2.3 building deep learning based semantic segmentation model
 
-    After the video taking during the bending test, the first image at every second of tje image was captured for preparing the image sequence. The 12 original images with 256 pixels x 256 pixels were cropped from the image sequence recorded by. The watershed segmentation was firstly applied for label the boundary of wood cell wall. The unlabeled part was manually modified to make their corresponding ground truth masks with cell wall boundary labeled in white and background labeled in black were manually prepared. Finally, The 12 sets of original image and corresponding ground truth mask were used for building semantic segmentation model. And the asymmetric U-net architecture was used for the model training. (Figure for )
+    After the video taking during the bending test, the first image at every second of tje image was captured for preparing the image sequence. The 12 original images with 256 pixels x 256 pixels were cropped from the image sequence recorded by. The watershed segmentation was firstly applied for label the boundary of wood cell wall. The unlabeled part was manually modified to make their corresponding ground truth masks with cell wall boundary labeled in white and background labeled in black were manually prepared. Finally, The 12 sets of original image and corresponding ground truth mask were used for building semantic segmentation model. And the asymmetric U-net architecture with batch normalization was used for the model training. (Fig.X )
 
 <img title="" src="../Figures/mask_preparation.png" alt="mask_preparation.png" data-align="center" width="635">
 
@@ -96,7 +112,7 @@ discuss the training results (loss vs. epoch, accuracy/f1_score vs. epoch)
 
 show the predicted mask (problem: the latewood part was not well predicted)
 
-<img title="" src="../Figures/large_img_predicted.png" alt="large_img_predicted.png" width="545">
+<img title="" src="../Figures/large_img_predicted.png" alt="large_img_predicted.png" width="545" data-align="center">
 
 Fig. X cell wall boundary prediction by trained U-net model. (a) binary cross entropy loss plotted against the training epochs; (b) input original image; (c) predicted image
 
@@ -108,7 +124,7 @@ Table. X the values of metrics for predicted images by trained U-net model
 
 <img title="" src="../Figures/partial_deformation.png" alt="partial_deformation.png" data-align="center" width="380">
 
-Fig.x typical deformation of wood cell wall for three types of hinoki specimens during micro three-point bending test. (a) cell wall deformation of flat-swan specimen, upper: compression part, lower: tension part; (b) cell wall deformation of quarter-swan specimen, upper: compression part, lower: tension part; (c) cell wall deformation of rift-swan specimen, upper: compression part, lower: tension part. The scale bar indicates 50 \mum
+Fig.x typical deformation of wood cell wall for three types of hinoki specimens during micro three-point bending test. (a) cell wall deformation of flat-swan specimen, upper: compression part, lower: tension part; (b) cell wall deformation of quarter-swan specimen, upper: compression part, lower: tension part; (c) cell wall deformation of rift-swan specimen, upper: compression part, lower: tension part. The scale bar indicates 50 $μ$m
 
 #### 3.3 Visualization of the intensity of cell wall deformation
 
@@ -121,5 +137,7 @@ The variety of the cell wall deformation pattern and its relationship with  stra
 ## 4. Conclusion
 
 ## 5. Reference
+
+Mechanism for deformation of wood as a honeycomb structure I: effect of anatomy on the initial deformation process during radial compression
 
 ## 6. Acknowledgement
