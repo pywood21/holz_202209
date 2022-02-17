@@ -40,8 +40,6 @@ Hwang et al. (2021) used the replica method
 
     Ando 
 
-
-
     The third main approach is applying mechanical simulation such finite element method (FEM) and molecular mechanics for understanding the mechanical properties of wood. 
 
     Limitation of approach #2 and #3: Only the homogenized geometry of wood has been analyzed. 
@@ -138,6 +136,22 @@ The variety of the cell wall deformation pattern and its relationship with  stra
 
 ## 5. Reference
 
-Mechanism for deformation of wood as a honeycomb structure I: effect of anatomy on the initial deformation process during radial compression
+> Forest Products Laboratory (1999) Wood Handbook-Wood as an Engineering Material; General Technical Report FPL-GTR-113; U.S. Department of Agriculture, Forest Service, Forest Products Laboratory: Madison, WI, USA.
+
+> Ando K and  Onda H (1999) Mechanism for deformation of wood as a honeycomb structure I: effect of anatomy on the initial deformation process during radial compression. J Wood Sci 45: 120-125.
+
+> Ando K and Onda H (1999) Mechanism for deformation of wood as a honeycomb structure II: First buckling mechanism of cell walls under radial compression using the generalized cell model. J Wood Sci 45:250-253.
+
+> Gibson LJ,  Ashby  MF (1998) Cellular Solids: Structure and Properties; Pergamon Press: New York, NY, USA.
+
+> Müller U, Gindl W, Teischinger A (2003) Effects of cell anatomy on the plastic and elastic behaviour of different wood species loaded perpendicular to grain. IAWA J 24: 117–128.
+
+> Watanabe  U,  Norimoto M,  Ohgama T,  Fujita  M (1999)  Tangential Young’s modulus of coniferous early wood investigated using cell models. Holzforschung 53: 209–214.
+
+> Watanabe U,  Norimoto  M,  Morooka T (2000) Cell wall thickness and tangential Young’s modulus in coniferous early wood.  J Wood Sci: 46, 109–114.
+
+> Watanabe U,  Fujita M,  Norimoto M (2002) Transverse Young’s moduli and cell shapes in coniferous early wood. Holzforschung 56: 1–6.
+
+ 
 
 ## 6. Acknowledgement
