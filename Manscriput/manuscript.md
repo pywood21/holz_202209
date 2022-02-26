@@ -14,8 +14,6 @@ E-mail: chenshuoye@gmail.com
 
 ## Abstract
 
-
-
 ## Keywords:
 
 Cell wall deformation, Mechanical property, Semantic segmentation, U-net, Computer vision, Deep learning, Particle tracking
@@ -31,8 +29,6 @@ Cell wall deformation, Mechanical property, Semantic segmentation, U-net, Comput
     The first one is a **top-down approach** that is direct microscopic observation of deformation of anatomical features during or after the mechanical test. Ando and Onda (1999) used wet-type scanning electron microscope (SEM) to observe the compression of wood cell wall. Combing with image analysis, it was found that the first fracture of cell wall occurred in one tangential row of earlywood tracheids just after the load displacement curve exceeded the proportional limit. Müller et al. (2003) observed cell deformation of both softwood (spruce) and hardwood (oak and beech) at different yielding stage of compression test by using both SEM and light microscope for concluding different fracture pattern of anatomical features in those species. Hwang et al. (2021) used the replica method to intermittently analyze the cell wall deformation of flat-swan, quarter-swan and rift-swan in transverse direction of wood due to three point bending test. The rift-swan of softwood exhibited a unique shear deformation of earlywood cell wall contributing for the extremely large flexural deformation. Such direction observation provides important information to understand the in-situ deformation of wood specimen.
 
     The second approach is a **bottom-up** approach that simulate the mechanical properties of wood considering its microstrcuture. 
-
-
 
     On the other hand, with the development of computer vision in the field of artificial intelligence, the semantic segmentation has been proposed as a promising approach to label each pixel of an image with a corresponding class of what is represented. Recently, the deep-learning based semantic segmentation model has been developed and those technology that has large field of application and already been adapted to for self-driving vehicles and  analysis of biomedical image for medical diagnosis. 
 
@@ -144,6 +140,8 @@ The variety of the cell wall deformation pattern and its relationship with  stra
 
 > Gibson LJ (2012)  The hierarchica structure and mechanics of plant materials. J R Soc Interface 9: 2749-2766.
 
+> Wu G, Shen Y, Feng Fu, Guo J, Ren H (2022) Study of the mechanical properties of wood under transverse compression using Monto Carlo simulation-based stochastic FE analysis. Forests 13: 32. 
 
+> Zhong W, Zhang Z, Chen X, Wei Q, Chen G, Huang X (2021) Multi-scale finite element simulation on large deformation behavior of wood under axial and transverse compression conditions. Acta Mech Sin 37: 1136-1151.
 
 ## 6. Acknowledgement
