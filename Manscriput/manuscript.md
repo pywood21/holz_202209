@@ -24,6 +24,8 @@ Cell wall deformation, Mechanical property, Semantic segmentation, U-net, Comput
 
 Wood is a natural cellular material, it has complex structure with different cell types (anatomical features) acting together to serve the needs of living tree [1]. Also, as an anisotropic material,  wood has excellent mechanical properties parallel to the grain ( longitudinal direction), while its mechanical properties perpendicular to the grain (transverse direction) are relatively weak [2] and varied among different wood species with relation to their unique anatomical features [1]. 
 
+Also, as a construction materials, human tried to use it for making building considering its anatomical structure. For example, a traditional roofing method called kokerabuki in japan......
+
 To completely unveil the relationship between anatomical features and mechanical behavior of wood, the quantitative and accurate analysis of local deformation of anatomical features during the mechanical test is an important subject. Up to now, wood scientists developed several approaches from two perspectives for understanding how anatomical features affect the mechanical behavior of wood in transverse direction. 
 
 The first one is **top-down perspective** that is direct microscopic observation of deformation of anatomical features during or after the mechanical test. Ando and Onda (1999) [3] used wet-type scanning electron microscope (SEM) to observe the compression of wood cell wall. Combing with image analysis, it was found that the first fracture of cell wall occurred in one tangential row of earlywood tracheids just after the load displacement curve exceeded the proportional limit. Müller et al. (2003) [4] observed cell deformation of both softwood (spruce) and hardwood (oak and beech) at different yielding stage of compression test by using both SEM and light microscope for concluding different fracture pattern of anatomical features in those species. Hwang et al. (2021) [5] used the replica method to intermittently analyze the cell wall deformation of flat-swan, quarter-swan and rift-swan in transverse direction of wood due to three point bending test. The rift-swan of softwood exhibited a unique shear deformation of earlywood cell wall contributing for the extremely large flexural deformation. Such direct microscopic observation methods provides important information to understand the in-situ deformation of wood microstructures.
@@ -48,7 +50,13 @@ After the conditioning, all specimens were subjected to the micro three-point be
 
 Fig. 1 The illustration of micro three-point bending test. (a) The illustrated apparatus used for the test. (b) Cross section of wood specimen observed by stereo-microscope.
 
-#### 2.3 building deep learning based semantic segmentation model
+#### 2.3 Deep learning based semantic segmentation model
+
+With the development of artifical intelligence 
+
+As a fully connected network with skip-connection　
+
+And U-Net has been concluded as an promising segmentation model for wood anatomical structure. Therefore, in this study, the U-Net has been selected for building model.
 
 After the video taking during the bending test, the first image at every second of the video was captured for preparing the image sequence. The 12 original images with 256 pixels x 256 pixels were cropped from the image sequence recorded by. The watershed segmentation was firstly applied for label the boundary of wood cell wall. The unlabeled part was manually modified to make their corresponding ground truth masks with cell wall boundary labeled in white and background labeled in black were manually prepared. Finally, The 12 sets of original image and corresponding ground truth mask were used for building semantic segmentation model. And the asymmetric U-net architecture with batch normalization was used for the model training. (Fig.X )
 
@@ -94,11 +102,13 @@ discuss the training results (loss vs. epoch, accuracy/f1_score vs. epoch)
 
 show the predicted mask (problem: the latewood part was not well predicted)
 
+the metrics was used for the model evaluation, the accurate model has been built
+
+the extracted typical cell wall 
+
 <img title="" src="../Figures/large_img_predicted.png" alt="large_img_predicted.png" width="545" data-align="center">
 
 Fig. 6 cell wall boundary prediction by trained U-net model. (a) binary cross entropy loss plotted against the training epochs; (b) input original image; (c) predicted image
-
-
 
 Table. 1 the evaluated metrics for predicted images by trained U-net model
 
@@ -106,13 +116,9 @@ Table. 1 the evaluated metrics for predicted images by trained U-net model
 |:------------:|:------------:|:------------:|:------------:|
 | 0.92 (0.006) | 0.82 (0.017) | 0.82 (0.019) | 0.82 (0.017) |
 
-
-
 <img title="" src="../Figures/partial_deformation.png" alt="partial_deformation.png" data-align="center" width="288">
 
 Fig.7 typical deformation of wood cell wall for three types of hinoki specimens during micro three-point bending test. (a) cell wall deformation of flat-swan specimen, upper: compression part, lower: tension part; (b) cell wall deformation of quarter-swan specimen, upper: compression part, lower: tension part; (c) cell wall deformation of rift-swan specimen, upper: compression part, lower: tension part. The scale bar indicates 50 $μ$m
-
-
 
 #### 3.3 Visualization of the intensity of cell wall deformation
 
@@ -156,7 +162,7 @@ Fig.9
 
 > 12. Zhong W, Zhang Z, Chen X, Wei Q, Chen G, Huang X (2021) Multi-scale finite element simulation on large deformation behavior of wood under axial and transverse compression conditions. Acta Mech Sin 37: 1136-1151.
 
-> 13.  Ronneberger O, Fischer P, Brox T (2015) U-Net: convolutional networks for
+> 13. Ronneberger O, Fischer P, Brox T (2015) U-Net: convolutional networks for
 >     biomedical image segmentation, Lect. Notes Comput. Sci. (including Subser Lect Notes Artif Intell Lect Notes Bioinformatics) 9351:234–241.
 
 > 14. Chaurasia A,  Culurciello E (2017) LinkNet: Exploiting encoder representations for efficient semantic segmentation. In Proceedings of the 2017 IEEE Visual Communications and Image Processing (VCIP), St. Petersburg, FL, USA, 1–4.
@@ -175,6 +181,10 @@ Fig.9
 
 > 21. Allan, D. B., Caswell, T., Keim, N. C. & van der Wel, C. M. trackpy: Trackpy v0.5.0. (Zenodo, 2018). doi:10.5281/zenodo.1226458
 
+> 22. Garcia-Pedrero, A, García-Cervigón I A, Olano J M , García-Hidalgo M, Lillo-Saavedra M, Gonzalo-Martín C, Caetano C, Calderón-Ramírez S (2020) Convolutional neural networks for segmenting xylem vessels in stained cross-sectional images. Neural Comput Appl 32: 17927-17939
 
+> 23. Wolny A, Cerrone L, Vijayan A, Tofanelli R, Barro AV, Louveaux M, Wenzl C, Strauss S, Wilson-Sánchez D, Lymbouridou R, Steigleder S S, Pape C, Bailoni A, Duran-Nebreda S, Bassel GW, Lohman JU, Tsiantis M, Hamprecht FA, Scheitz K, Maizel A, Kreshuk A (2020) Accurate and versatile 3D segmentation of  plants tissues at cellular resolution, elife 29.
+
+> Wolny A, Cerrone L, Vijayan A, Tofanelli R, Barro AV, Louveaux M, Wenzl C, Strauss S, Wilson-Sánchez D, Lymbouridou R, Steigleder SS, Pape C, Bailoni A, Duran-Nebreda S, Bassel GW, Lohmann JU, Tsiantis M, Hamprecht FA, Schneitz K, Maizel A, Kreshuk A. Accurate and versatile 3D segmentation of plant tissues at cellular resolution. Elife. 2020 Jul 29;9:e57613. doi: 10.7554/eLife.57613. PMID: 32723478; PMCID: PMC7447435.
 
 ## 6. Acknowledgement

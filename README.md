@@ -2,7 +2,7 @@
 
  Accurate and quantitative analysis of cell wall deformation by computer vision
 
-This repository is aim to submit current work to international journal (potential journal: Journal of The Royal Society Interface, Plant methods, Scientific reports, Holzforschung, Wood science and technology....).
+This repository is aim to submit current work to international journal (potential journal: Construction and building materials, Journal of materials science, Wood science and technology, Holzforschung).
 
 ### Generation introduction of this repository:
 
@@ -24,6 +24,6 @@ local changes in anatomical features and their interaction during the mechanical
 test.
 
 Therefore, as a preliminary try in this study, the semantic
-segmentation model has been built to conduct partitioning of anatomical
+segmentation model has been built to conduct partition of anatomical
 features, and their local deformation during the micro three-point bending test
 were precisely analyzed.
