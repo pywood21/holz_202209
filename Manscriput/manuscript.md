@@ -52,17 +52,13 @@ Fig. 1 The illustration of micro three-point bending test. (a) The illustrated a
 
 #### 2.3 Deep learning based semantic segmentation model
 
-With the development of artifical intelligence 
+With the development of artificial intelligence, the fully convolutional networks (FCN) was proposed for conducting the semantic segmentation []. Furthermore, as an improvement of FCN, the U-Net architecture was proposed by Ronneberger et al.[] , which is designed to allow fewer training samples for model training.  It is a U-shape architecture consisting of encoder blocks, decoder blocks and skip connections. It has became one of the most popular approaches for any semantic segmentation tasks. Recently, the U-net model has been applied for the segmentation of plant tissues[] and xylem vessels in stained cross-section of wood with excellent accuracy.  Therefore, in this study, the U-Net has been selected for building model.
 
-As a fully connected network with skip-connection　
-
-And U-Net has been concluded as an promising segmentation model for wood anatomical structure. Therefore, in this study, the U-Net has been selected for building model.
-
-After the video taking during the bending test, the first image at every second of the video was captured for preparing the image sequence. The 12 original images with 256 pixels x 256 pixels were cropped from the image sequence recorded by. The watershed segmentation was firstly applied for label the boundary of wood cell wall. The unlabeled part was manually modified to make their corresponding ground truth masks with cell wall boundary labeled in white and background labeled in black were manually prepared. Finally, The 12 sets of original image and corresponding ground truth mask were used for building semantic segmentation model. And the asymmetric U-net architecture with batch normalization was used for the model training. (Fig.X )
+For preparation of training dataset and model training, after the video taking during the bending test, the first image at every second of the video was captured for preparing the image sequence. The 12 original images with 256 pixels x 256 pixels were cropped from the image sequence recorded by. The watershed segmentation was firstly applied for label the boundary of wood cell wall. The unlabeled part was manually modified to make their corresponding ground truth masks with cell wall boundary labeled in white and background labeled in black were manually prepared. Finally, The 12 sets of original image and corresponding ground truth mask were used for building semantic segmentation model. And the asymmetric U-net architecture was used for the model training. (Fig.X )
 
 <img title="" src="../Figures/mask_preparation.png" alt="mask_preparation.png" data-align="center" width="635">
 
-Fig. 2 Preparation of data set for semantic segmentation model training. (a) Cropped patch of cross section of wood; (b) cell wall boundary labeled mask by watershed segmentation algorithm (c) manually corrected image mask. The scale bar indicates length of 100 micrometer
+Fig. 2 Preparation of data set for semantic segmentation model training. (a) Cropped patch of cross section of wood; (b) cell wall boundary labeled mask by watershed segmentation algorithm (c) manually corrected image mask. The scale bar indicates length of 100 *μ*m
 
 #### 2.4 image prediction and individual cell tracking
 
@@ -78,21 +74,17 @@ Finally, after the tracking of individual cell, the area, eccentricity, major/mi
 
 <img title="" src="../Figures/parameters_calculation.png" alt="parameters_calculation.png" data-align="center" width="413">
 
-the n indicates the order of the observed image sequence. The i indicates the measured parameters showed on Fig.X.
-
-<img title="" src="../Figures/parameters_measurment.png" alt="parameters_measurment.png" data-align="center" width="450">
-
-Fig.4 the measurement parameters to evaluate the intensity of deformation of cell wall
+the n indicates the order of the observed image sequence. The i indicates the measured parameters showed on Fig.X.<img title="" src="../Figures/parameters_measurment_2.png" alt="parameters_measurment_2.png" data-align="center" width="805">Fig.4 the measurement parameters to evaluate the intensity of deformation of cell wall
 
 ## 3. results and discussion
 
-#### 3.1 mechanical properties of flat-swan, quarter-swan and rift-swan
+#### 3.1 mechanical properties of flat-sawn, quarter-sawn and rift-sawn
 
 The Fig discuss the force-displacement curve, modulus of elasticity and modulus of rupture. In comparison to the 
 
 the orientation of annual ring play an important role on 
 
-<img src="../Figures/dis_moe_mor.png" title="" alt="dis_moe_mor.png" data-align="center">
+![Hinoki_dis_MOE.png](../Figures/Hinoki_dis_MOE.png)
 
 Fig.5 mechanical properties of flat-swan, quarter-swan and rift-swan of hinoki specimens. (a) load and displacement of three types of hinoki specimens during micro three-point test. (b) MOE (modulus of elasticity) and MOR (modulus of rupture) of three types of hinoki specimen; the error bars indicate the standard deviation.
 
@@ -106,9 +98,9 @@ the metrics was used for the model evaluation, the accurate model has been built
 
 the extracted typical cell wall 
 
-<img title="" src="../Figures/large_img_predicted.png" alt="large_img_predicted.png" width="545" data-align="center">
+![large_img_predicted.png](/Users/chen/Documents/GitHub/Tracking_cell_wall_deformation/Figures/large_img_predicted.png)
 
-Fig. 6 cell wall boundary prediction by trained U-net model. (a) binary cross entropy loss plotted against the training epochs; (b) input original image; (c) predicted image
+Fig. 6 cell wall boundary prediction by trained U-net model. (a) binary cross entropy loss plotted against the training epochs; (b) input original image; (c) predicted image. The scale bar indicates length of 400 *μ*m
 
 Table. 1 the evaluated metrics for predicted images by trained U-net model
 
@@ -116,21 +108,41 @@ Table. 1 the evaluated metrics for predicted images by trained U-net model
 |:------------:|:------------:|:------------:|:------------:|
 | 0.92 (0.006) | 0.82 (0.017) | 0.82 (0.019) | 0.82 (0.017) |
 
-<img title="" src="../Figures/partial_deformation.png" alt="partial_deformation.png" data-align="center" width="288">
+#### 3.3 Distribution of segmented cells geometry ?
 
-Fig.7 typical deformation of wood cell wall for three types of hinoki specimens during micro three-point bending test. (a) cell wall deformation of flat-swan specimen, upper: compression part, lower: tension part; (b) cell wall deformation of quarter-swan specimen, upper: compression part, lower: tension part; (c) cell wall deformation of rift-swan specimen, upper: compression part, lower: tension part. The scale bar indicates 50 $μ$m
+
 
 #### 3.3 Visualization of the intensity of cell wall deformation
 
+<img title="" src="../Figures/partial_deformation.png" alt="partial_deformation.png" width="473" data-align="center">
+
+Fig.7 typical deformation of wood cell wall for three types of hinoki specimens during micro three-point bending test. (a) cell wall deformation of flat-swan specimen, upper: compression part, lower: tension part; (b) cell wall deformation of quarter-swan specimen, upper: compression part, lower: tension part; (c) cell wall deformation of rift-swan specimen, upper: compression part, lower: tension part. The scale bar indicates 50 μm
+
+
+
 show the map with several parameters as example, discuss the cell wall deformation from elastic region to plastic region
 
-Fig. 8
+
+
+![flat-sawn_map.png](/Users/chen/Documents/GitHub/Tracking_cell_wall_deformation/Figures/flat-sawn_map.png)
+
+Fig. 8 Intensity of cell wall deformation of flat-sawn specimen during micro three-point bending test.
+
+![quarter-sawn_map.png](/Users/chen/Documents/GitHub/Tracking_cell_wall_deformation/Figures/quarter-sawn_map.png)
+
+Fig. 9 Intensity of cell wall deformation of quarter-sawn specimen during micro three-point bending test.
+
+![rift-sawn_map.png](/Users/chen/Documents/GitHub/Tracking_cell_wall_deformation/Figures/rift-sawn_map.png)
+
+Fig. 10 Intensity of cell wall deformation of rift-sawn specimen during micro three-point bending test.
 
 #### 3.4 Clustering Relationship between changes in intensity of cell wall deformation and Stress-strain curve
 
 The variety of the cell wall deformation pattern and its relationship with  strain-stress curve
 
-Fig.9
+
+
+Fig.11
 
 ## 4. Conclusion
 
@@ -184,7 +196,5 @@ Fig.9
 > 22. Garcia-Pedrero, A, García-Cervigón I A, Olano J M , García-Hidalgo M, Lillo-Saavedra M, Gonzalo-Martín C, Caetano C, Calderón-Ramírez S (2020) Convolutional neural networks for segmenting xylem vessels in stained cross-sectional images. Neural Comput Appl 32: 17927-17939
 
 > 23. Wolny A, Cerrone L, Vijayan A, Tofanelli R, Barro AV, Louveaux M, Wenzl C, Strauss S, Wilson-Sánchez D, Lymbouridou R, Steigleder S S, Pape C, Bailoni A, Duran-Nebreda S, Bassel GW, Lohman JU, Tsiantis M, Hamprecht FA, Scheitz K, Maizel A, Kreshuk A (2020) Accurate and versatile 3D segmentation of  plants tissues at cellular resolution, elife 29.
-
-> Wolny A, Cerrone L, Vijayan A, Tofanelli R, Barro AV, Louveaux M, Wenzl C, Strauss S, Wilson-Sánchez D, Lymbouridou R, Steigleder SS, Pape C, Bailoni A, Duran-Nebreda S, Bassel GW, Lohmann JU, Tsiantis M, Hamprecht FA, Schneitz K, Maizel A, Kreshuk A. Accurate and versatile 3D segmentation of plant tissues at cellular resolution. Elife. 2020 Jul 29;9:e57613. doi: 10.7554/eLife.57613. PMID: 32723478; PMCID: PMC7447435.
 
 ## 6. Acknowledgement
