@@ -98,7 +98,7 @@ the metrics was used for the model evaluation, the accurate model has been built
 
 the extracted typical cell wall 
 
-![large_img_predicted.png](/Users/chen/Documents/GitHub/Tracking_cell_wall_deformation/Figures/large_img_predicted.png)
+![large_img_predicted.png](../Figures/large_img_predicted.png)
 
 Fig. 6 cell wall boundary prediction by trained U-net model. (a) binary cross entropy loss plotted against the training epochs; (b) input original image; (c) predicted image. The scale bar indicates length of 400 *μ*m
 
@@ -124,15 +124,15 @@ show the map with several parameters as example, discuss the cell wall deformati
 
 
 
-![flat-sawn_map.png](/Users/chen/Documents/GitHub/Tracking_cell_wall_deformation/Figures/flat-sawn_map.png)
+![flat-sawn_map.png](../Figures/flat-sawn_map.png)
 
 Fig. 8 Intensity of cell wall deformation of flat-sawn specimen during micro three-point bending test.
 
-![quarter-sawn_map.png](/Users/chen/Documents/GitHub/Tracking_cell_wall_deformation/Figures/quarter-sawn_map.png)
+![quarter-sawn_map.png](../Figures/quarter-sawn_map.png)
 
 Fig. 9 Intensity of cell wall deformation of quarter-sawn specimen during micro three-point bending test.
 
-![rift-sawn_map.png](/Users/chen/Documents/GitHub/Tracking_cell_wall_deformation/Figures/rift-sawn_map.png)
+![rift-sawn_map.png](../Figures/rift-sawn_map.png)
 
 Fig. 10 Intensity of cell wall deformation of rift-sawn specimen during micro three-point bending test.
 
