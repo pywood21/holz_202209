@@ -46,7 +46,7 @@ Hinoki (*Chamaecyparis obtusa*) was used in this study. Three types of (flat-swa
 
 After the conditioning, all specimens were subjected to the micro three-point bending test. The customized metal jig (Fig. X (a)) was used for the test. A motor (BLM230P-GFV2, ORIENTAL MOTOR Co.,Ltd., Japan) with test speed of 1mm/min was used to horizontally bend the specimen. And a 200N load cell (LUR-A-200NSA1, Kyowa Electronic Instruments Co., Ltd., Japan) with sensor interface (PCD-320A, Kyowa Electronic Instruments Co., Ltd., Japan) was used to record the force, the sampling speed is 1Hz. During the test, a stereo-microscope (Leica DMS300, Leica Camera AG, Germany) was used to record the deformation of cell wall by video mode with 30 fps. The resolution was 1080p and the length of one pixel is equal to about 2.09 *µ*m. All experiment was conducted at 60% RH and 25°C.
 
-<img title="" src="../Figures/apparatus.png" alt="appratus.png" data-align="center" width="417">
+<img title="" src="../Figures/apparatus.png" alt="appratus.png" data-align="inline" width="417">
 
 Fig. 1 The illustration of micro three-point bending test. (a) The illustrated apparatus used for the test. (b) Cross section of wood specimen observed by stereo-microscope.
 
@@ -56,7 +56,7 @@ With the development of artificial intelligence, the fully convolutional network
 
 For preparation of training dataset and model training, after the video taking during the bending test, the first image at every second of the video was captured for preparing the image sequence. The 12 original images with 256 pixels x 256 pixels were cropped from the image sequence recorded by. The watershed segmentation was firstly applied for label the boundary of wood cell wall. The unlabeled part was manually modified to make their corresponding ground truth masks with cell wall boundary labeled in white and background labeled in black were manually prepared. Finally, The 12 sets of original image and corresponding ground truth mask were used for building semantic segmentation model. And the asymmetric U-net architecture was used for the model training. The augmentation was applied during the model training. (Fig.X )
 
-<img title="" src="../Figures/mask_preparation.png" alt="mask_preparation.png" data-align="center" width="635">
+<img title="" src="../Figures/mask_preparation.png" alt="mask_preparation.png" data-align="inline" width="635">
 
 Fig. 2 Preparation of data set for semantic segmentation model training. (a) Cropped patch of cross section of wood; (b) cell wall boundary labeled mask by watershed segmentation algorithm (c) manually corrected image mask. The scale bar indicates length of 100 *μ*m
 
@@ -64,7 +64,7 @@ Fig. 2 Preparation of data set for semantic segmentation model training. (a) Cro
 
 After model training, the trained model combined with the patch blending algorithm implemented by Vooban [19] were used to conduct partition of all potential cells in the image sequence with 1920 pixels x 1080 pixels. After predicting all image sequence, watershed segmentation was applied again to achieve the instance segmentation of all cells. Finally, the coordinates of centriod of all cells were collected and a tracking algorithm (Crocker-Grier linking algorithm) [20] implemented by trackpy [21] was used to link the same cell walls exist in each image.
 
-<img title="" src="../Figures/particle_linking.png" alt="particle_linking.png" width="638" data-align="center">
+<img title="" src="../Figures/particle_linking.png" alt="particle_linking.png" width="638" data-align="inline">
 
 Fig.3 tracking the cell wall deformation during mechanical test. (a) watershed segmentation of predicted image by trained U-net model to achieve instance segmentation; (b) The coordinates of centriods of each cell wall were exacted as the features for particle linking; (c)  trajectories was found by Crocker-Grier linking algorithm.
 
@@ -72,9 +72,9 @@ Fig.3 tracking the cell wall deformation during mechanical test. (a) watershed s
 
 Finally, after the tracking of individual cells existing at every image sequence, the area, eccentricity, length of major and minor axis of fitted ellipse, and length of vertical and horizontal length of bounding box for each cell wall were measured (Fig.X). Those measurements were implemented by python package: scikit-image[] ?. Furthermore, the fitted ellipse aspect ratio and the aspect ratio of vertical and bounding box aspect ratio were calculated. For evaluating the intensity of cell wall deformation. The changes in area, eccentricity, fitted ellipse aspect ratio and bounding box aspect ratio were calculated based on the following equation:
 
-<img title="" src="../Figures/parameters_calculation.png" alt="parameters_calculation.png" data-align="center" width="413">
+<img title="" src="../Figures/parameters_calculation.png" alt="parameters_calculation.png" data-align="inline" width="413">
 
-the n indicates the order of the observed image sequence. The i indicates the measured parameters showed on Fig.X.<img title="" src="../Figures/parameters_measurment_2.png" alt="parameters_measurment_2.png" data-align="center" width="805">Fig.4 the measurement parameters to evaluate the intensity of deformation of cell wall
+the n indicates the order of the observed image sequence. The i indicates the measured parameters showed on Fig.X.<img title="" src="../Figures/parameters_measurment_2.png" alt="parameters_measurment_2.png" data-align="inline" width="805">Fig.4 the measurement parameters to evaluate the intensity of deformation of cell wall
 
 ## 3. results and discussion
 
@@ -112,7 +112,7 @@ Table. 1 the evaluated metrics for predicted images by trained U-net model
 
 #### 3.3 Typical deformation pattern of three types of specimens
 
-<img title="" src="../Figures/partial_deformation.png" alt="partial_deformation.png" width="473" data-align="center">
+<img title="" src="../Figures/partial_deformation.png" alt="partial_deformation.png" width="473" data-align="inline">
 
 Fig.7 typical deformation of wood cell wall for three types of hinoki specimens during micro three-point bending test. (a) cell wall deformation of flat-swan specimen, upper: compression part, lower: tension part; (b) cell wall deformation of quarter-swan specimen, upper: compression part, lower: tension part; (c) cell wall deformation of rift-swan specimen, upper: compression part, lower: tension part. The scale bar indicates 50 μm
 
