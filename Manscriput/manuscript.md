@@ -24,7 +24,7 @@ Cell wall deformation, Mechanical property, Semantic segmentation, U-net, Comput
 
 Wood is a natural cellular material, it has complex structure with different cell types (anatomical features) acting together to serve the needs of living tree [1]. Also, as an anisotropic material,  wood has excellent mechanical properties parallel to the grain ( longitudinal direction), while its mechanical properties perpendicular to the grain (transverse direction) are relatively weak [2] and varied among different wood species with relation to their unique anatomical features [1]. 
 
-From ancient time, human started to use wood as a construction materials for building civilization considering the structure of wood. For instance, a traditional roofing method called kokerabuki in Japanese. 
+From ancient time, human started to use wood as a construction materials for building civilization considering the microstructure of wood. For instance, a traditional roofing method called kokerabuki in Japanese.
 
 To completely unveil the relationship between anatomical features and mechanical behavior of wood, the quantitative and accurate analysis of local deformation of anatomical features during the mechanical test is an important subject. Up to now, wood scientists developed several approaches from two perspectives for understanding how anatomical features affect the mechanical behavior of wood in transverse direction. 
 
@@ -46,7 +46,7 @@ Hinoki (*Chamaecyparis obtusa*) was used in this study. Three types of (flat-swa
 
 After the conditioning, all specimens were subjected to the micro three-point bending test. The customized metal jig (Fig. X (a)) was used for the test. A motor (BLM230P-GFV2, ORIENTAL MOTOR Co.,Ltd., Japan) with test speed of 1mm/min was used to horizontally bend the specimen. And a 200N load cell (LUR-A-200NSA1, Kyowa Electronic Instruments Co., Ltd., Japan) with sensor interface (PCD-320A, Kyowa Electronic Instruments Co., Ltd., Japan) was used to record the force, the sampling speed is 1Hz. During the test, a stereo-microscope (Leica DMS300, Leica Camera AG, Germany) was used to record the deformation of cell wall by video mode with 30 fps. The resolution was 1080p and the length of one pixel is equal to about 2.09 *µ*m. All experiment was conducted at 60% RH and 25°C.
 
-<img title="" src="../Figures/apparatus.png" alt="appratus.png" data-align="inline" width="417">
+<img title="" src="../Figures/01_apparatus.png" alt="appratus.png" data-align="inline" width="417">
 
 Fig. 1 The illustration of micro three-point bending test. (a) The illustrated apparatus used for the test. (b) Cross section of wood specimen observed by stereo-microscope.
 
@@ -56,7 +56,7 @@ With the development of artificial intelligence, the fully convolutional network
 
 For preparation of training dataset and model training, after the video taking during the bending test, the first image at every second of the video was captured for preparing the image sequence. The 12 original images with 256 pixels x 256 pixels were cropped from the image sequence recorded by. The watershed segmentation was firstly applied for label the boundary of wood cell wall. The unlabeled part was manually modified to make their corresponding ground truth masks with cell wall boundary labeled in white and background labeled in black were manually prepared. Finally, The 12 sets of original image and corresponding ground truth mask were used for building semantic segmentation model. And the asymmetric U-net architecture was used for the model training. The augmentation was applied during the model training. (Fig.X )
 
-<img title="" src="../Figures/mask_preparation.png" alt="mask_preparation.png" data-align="inline" width="635">
+<img title="" src="../Figures/02_mask_preparation.png" alt="mask_preparation.png" data-align="inline" width="635">
 
 Fig. 2 Preparation of data set for semantic segmentation model training. (a) Cropped patch of cross section of wood; (b) cell wall boundary labeled mask by watershed segmentation algorithm (c) manually corrected image mask. The scale bar indicates length of 100 *μ*m
 
@@ -64,55 +64,57 @@ Fig. 2 Preparation of data set for semantic segmentation model training. (a) Cro
 
 After model training, the trained model combined with the patch blending algorithm implemented by Vooban [19] were used to conduct partition of all potential cells in the image sequence with 1920 pixels x 1080 pixels. After predicting all image sequence, watershed segmentation was applied again to achieve the instance segmentation of all cells. Finally, the coordinates of centriod of all cells were collected and a tracking algorithm (Crocker-Grier linking algorithm) [20] implemented by trackpy [21] was used to link the same cell walls exist in each image.
 
-<img title="" src="../Figures/particle_linking.png" alt="particle_linking.png" width="638" data-align="inline">
+<img title="" src="../Figures/03_particle_linking.png" alt="particle_linking.png" width="638" data-align="inline">
 
 Fig.3 tracking the cell wall deformation during mechanical test. (a) watershed segmentation of predicted image by trained U-net model to achieve instance segmentation; (b) The coordinates of centriods of each cell wall were exacted as the features for particle linking; (c)  trajectories was found by Crocker-Grier linking algorithm.
 
 #### 2.5 parameters measurement for cell wall deformation analysis
 
-Finally, after the tracking of individual cells existing at every image sequence, the area, eccentricity, length of major and minor axis of fitted ellipse, and length of vertical and horizontal length of bounding box for each cell wall were measured (Fig.X). Those measurements were implemented by python package: scikit-image[] ?. Furthermore, the fitted ellipse aspect ratio and the aspect ratio of vertical and bounding box aspect ratio were calculated. For evaluating the intensity of cell wall deformation. The changes in area, eccentricity, fitted ellipse aspect ratio and bounding box aspect ratio were calculated based on the following equation:
+Finally, after the tracking of individual cells existing at every image sequence, the area, eccentricity, length of major and minor axis of fitted ellipse, and length of vertical and horizontal length of bounding box for each cell wall were measured (Fig.X). Those measurements were implemented by python package: scikit-image[] ?. Furthermore, the fitted ellipse aspect ratio and the aspect ratio of vertical and bounding box aspect ratio were calculated. For evaluating the intensity of cell wall deformation, the changes in area, eccentricity, fitted ellipse aspect ratio and bounding box aspect ratio were calculated based on the following equation:
 
-<img title="" src="../Figures/parameters_calculation.png" alt="parameters_calculation.png" data-align="inline" width="413">
+<img title="" src="../Figures/05_parameters_calculation.png" alt="parameters_calculation.png" data-align="inline" width="413">
 
-the n indicates the order of the observed image sequence. The i indicates the measured parameters showed on Fig.X.<img title="" src="../Figures/parameters_measurment_2.png" alt="parameters_measurment_2.png" data-align="inline" width="805">Fig.4 the measurement parameters to evaluate the intensity of deformation of cell wall
+the n indicates the order of the observed image sequence. The i indicates the measured parameters showed on Fig.X.
+
+![04_parameters_measurment.png](../Figures/04_parameters_measurment.png)
+
+Fig.4 the measurement parameters to evaluate the intensity of deformation of cell wall
 
 ## 3. results and discussion
 
-#### 3.1 mechanical properties of flat-sawn, quarter-sawn and rift-sawn
+#### 3.1 flexural behavior of flat-sawn, quarter-sawn and rift-sawn in transverse direction
 
-The Fig discuss the force-displacement curve, modulus of elasticity and modulus of rupture. In comparison to the 
+The Fig.X shows the difference in the mechanical properties of flat-, quarter-, and rift- sawn in transverse direction. During the micro three-point bending test, the rift-sawn specimen showed smallest load with largest displacement, resulting the smallest modulus of elasticity (MOE) and modulus of rupture (MOR) (Fig. X (a)). And the quarter-sawn showed the largest MOE and MOR (Fig.X (b)). Those results agree with the previous study [], which suggests the orientation of ring plays an important role on the flexural behavior of wood in transverse direction. It also demonstrates that built micro three bending test system in this study is reliable for discussing the mechanical properties of wood.
 
-the orientation of annual ring play an important role on 
+<img title="" src="../Figures/06_Hinoki_dis_MOE.png" alt="Hinoki_dis_MOE.png" width="479">
 
-<img src="../Figures/Hinoki_dis_MOE.png" title="" alt="Hinoki_dis_MOE.png" width="479">
+Fig.5 mechanical properties of flat-swan, quarter-swan and rift-swan of hinoki specimens in transverse direction. (a) load and displacement of three types of hinoki specimens during micro three-point test. (b) MOE (modulus of elasticity) and MOR (modulus of rupture) of three types of hinoki specimen; the error bars indicate the standard deviation.
 
-Fig.5 mechanical properties of flat-swan, quarter-swan and rift-swan of hinoki specimens. (a) load and displacement of three types of hinoki specimens during micro three-point test. (b) MOE (modulus of elasticity) and MOR (modulus of rupture) of three types of hinoki specimen; the error bars indicate the standard deviation.
+#### 3.2 Validation of U-Net model and cell wall deformation tracking
 
-#### 3.2 Validation of U-net model and cell wall deformation tracking
-
-discuss the training results (loss vs. epoch, accuracy/f1_score vs. epoch) 
+discuss the training results
 
 show the predicted mask (problem: the latewood part was not well predicted)
 
 the metrics was used for the model evaluation, the accurate model has been built
 
-the extracted typical cell wall 
-
-<img src="../Figures/large_img_predicted.png" title="" alt="large_img_predicted.png" width="475">
+<img title="" src="../Figures/07_large_img_predicted.png" alt="large_img_predicted.png" width="475">
 
 Fig. 6 cell wall boundary prediction by trained U-net model. (a) binary cross entropy loss plotted against the training epochs; (b) input original image; (c) predicted image. The scale bar indicates length of 400 *μ*m
 
-Table. 1 the evaluated metrics for predicted images by trained U-net model
+Table. 1 the evaluated metrics for predicted images by trained U-Net model. The values in parentheses indicate the standard deviation. 
 
 | accuracy     | f1_score     | recall       | precision    |
 |:------------:|:------------:|:------------:|:------------:|
 | 0.92 (0.006) | 0.82 (0.017) | 0.82 (0.019) | 0.82 (0.017) |
 
-#### 3.3 Distribution of segmented cells geometry ?
+
+
+Fig.X the distribution of typical parameters measured from one specimen.
 
 #### 3.3 Typical deformation pattern of three types of specimens
 
-<img title="" src="../Figures/partial_deformation.png" alt="partial_deformation.png" width="473" data-align="inline">
+<img title="" src="../Figures/09_partial_deformation.png" alt="partial_deformation.png" width="473" data-align="inline">
 
 Fig.7 typical deformation of wood cell wall for three types of hinoki specimens during micro three-point bending test. (a) cell wall deformation of flat-swan specimen, upper: compression part, lower: tension part; (b) cell wall deformation of quarter-swan specimen, upper: compression part, lower: tension part; (c) cell wall deformation of rift-swan specimen, upper: compression part, lower: tension part. The scale bar indicates 50 μm
 
@@ -120,15 +122,15 @@ Fig.7 typical deformation of wood cell wall for three types of hinoki specimens 
 
 show the map with several parameters as example, discuss the cell wall deformation from elastic region to plastic region
 
-![flat-sawn_map.png](../Figures/flat-sawn_map.png)
+![flat-sawn_map.png](../Figures/10_flat-sawn_map.png)
 
 Fig. 8 Intensity of cell wall deformation of flat-sawn specimen during micro three-point bending test evaluated by .
 
-![quarter-sawn_map.png](../Figures/quarter-sawn_map.png)
+![quarter-sawn_map.png](../Figures/11_quarter-sawn_map.png)
 
 Fig. 9 Intensity of cell wall deformation of quarter-sawn specimen during micro three-point bending test evaluated by .
 
-![rift-sawn_map.png](../Figures/rift-sawn_map.png)
+![rift-sawn_map.png](../Figures/12_rift-sawn_map.png)
 
 Fig. 10 Intensity of cell wall deformation of rift-sawn specimen during micro three-point bending test evaluated by .
 
@@ -136,15 +138,9 @@ Fig. 10 Intensity of cell wall deformation of rift-sawn specimen during micro th
 
 The variety of the cell wall deformation pattern and its relationship with  strain-stress curve
 
-
-
-![kmeans_clustering_pattern.png](../Figures/kmeans_clustering_pattern.png)
+![kmeans_clustering_pattern.png](../Figures/13_kmeans_clustering_pattern.png)
 
 Fig.11
-
-
-
-
 
 ## 4. Conclusion
 
