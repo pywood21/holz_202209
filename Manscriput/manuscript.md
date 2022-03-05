@@ -54,13 +54,17 @@ Fig. 1 The illustration of micro three-point bending test. (a) The illustrated a
 
 With the development of artificial intelligence, the fully convolutional networks (FCN) was proposed for conducting the semantic segmentation []. Furthermore, as an improvement of FCN, the U-Net architecture was proposed by Ronneberger et al.[] , which is designed to allow fewer training samples for model training.  It is a U-shape architecture consisting of encoder blocks, decoder blocks and skip connections. It has became one of the most popular approaches for any semantic segmentation tasks. Recently, the U-net model has been applied for the segmentation of plant tissues[] and xylem vessels in stained cross-section of wood with excellent accuracy.  Therefore, in this study, the U-Net has been selected for building model.
 
-For preparation of training dataset and model training, after the video taking during the bending test, the first image at every second of the video was captured for preparing the image sequence. The 12 original images with 256 pixels x 256 pixels were cropped from the image sequence recorded by. The watershed segmentation was firstly applied for label the boundary of wood cell wall. The unlabeled part was manually modified to make their corresponding ground truth masks with cell wall boundary labeled in white and background labeled in black were manually prepared. Finally, The 12 sets of original image and corresponding ground truth mask were used for building semantic segmentation model. And the asymmetric U-net architecture was used for the model training. The augmentation was applied during the model training. (Fig.X )
+For preparation of training dataset and model training, after the video taking during the bending test, the first image at every second of the video was captured for preparing the image sequence. The 12 original images with 256 pixels x 256 pixels were cropped from the image sequence recorded by. The watershed segmentation was firstly applied for label the boundary of wood cell wall. The unlabeled part was manually modified to make their corresponding ground truth masks with cell wall boundary labeled in white and background labeled in black were manually prepared. Finally, The 12 sets of original image and corresponding ground truth mask were used for building semantic segmentation model. And the asymmetric U-net architecture was used for the model training. The binary cross entropy loss was used. as the loss function, and adam was used as the optimizer. The learning rate was 0.0001. During the model traning, the augmentation was applied . (Fig.X )
 
 <img title="" src="../Figures/02_mask_preparation.png" alt="mask_preparation.png" data-align="inline" width="635">
 
 Fig. 2 Preparation of data set for semantic segmentation model training. (a) Cropped patch of cross section of wood; (b) cell wall boundary labeled mask by watershed segmentation algorithm (c) manually corrected image mask. The scale bar indicates length of 100 *μ*m
 
-#### 2.4 image prediction and individual cell tracking
+#### 2.4 Metrics for model evaluation
+
+Four metrics were used for evaluating the trained model. They were accuracy, recall, precision, and F1-score. Those metrics were calculated from true positive (TP), false positive (FP), true negative (TN) and false negative (FN) obtained from the confusion matrix for the binary classification of cell boundary and background. The formula for the calculation were showed as below:
+
+#### 2.5 image prediction and individual cell tracking
 
 After model training, the trained model combined with the patch blending algorithm implemented by Vooban [19] were used to conduct partition of all potential cells in the image sequence with 1920 pixels x 1080 pixels. After predicting all image sequence, watershed segmentation was applied again to achieve the instance segmentation of all cells. Finally, the coordinates of centriod of all cells were collected and a tracking algorithm (Crocker-Grier linking algorithm) [20] implemented by trackpy [21] was used to link the same cell walls exist in each image.
 
@@ -68,7 +72,7 @@ After model training, the trained model combined with the patch blending algorit
 
 Fig.3 tracking the cell wall deformation during mechanical test. (a) watershed segmentation of predicted image by trained U-net model to achieve instance segmentation; (b) The coordinates of centriods of each cell wall were exacted as the features for particle linking; (c)  trajectories was found by Crocker-Grier linking algorithm.
 
-#### 2.5 parameters measurement for cell wall deformation analysis
+#### 2.6 parameters measurement for cell wall deformation analysis
 
 Finally, after the tracking of individual cells existing at every image sequence, the area, eccentricity, length of major and minor axis of fitted ellipse, and length of vertical and horizontal length of bounding box for each cell wall were measured (Fig.X). Those measurements were implemented by python package: scikit-image[] ?. Furthermore, the fitted ellipse aspect ratio and the aspect ratio of vertical and bounding box aspect ratio were calculated. For evaluating the intensity of cell wall deformation, the changes in area, eccentricity, fitted ellipse aspect ratio and bounding box aspect ratio were calculated based on the following equation:
 
@@ -84,19 +88,19 @@ Fig.4 the measurement parameters to evaluate the intensity of deformation of cel
 
 #### 3.1 flexural behavior of flat-sawn, quarter-sawn and rift-sawn in transverse direction
 
-The Fig.X shows the difference in the mechanical properties of flat-, quarter-, and rift- sawn in transverse direction. During the micro three-point bending test, the rift-sawn specimen showed smallest load with largest displacement, resulting the smallest modulus of elasticity (MOE) and modulus of rupture (MOR) (Fig. X (a)). And the quarter-sawn showed the largest MOE and MOR (Fig.X (b)). Those results agree with the previous study [], which suggests the orientation of ring plays an important role on the flexural behavior of wood in transverse direction. It also demonstrates that built micro three bending test system in this study is reliable for discussing the mechanical properties of wood.
+The Fig.X shows the difference in the mechanical properties of flat-, quarter-, and rift- sawn in transverse direction. During the micro three-point bending test, the rift-sawn specimen showed smallest load with largest displacement, resulting the smallest modulus of elasticity (MOE) and modulus of rupture (MOR) (Fig. X (a)). And the quarter-sawn showed the largest MOE and MOR (Fig.X (b)). Those results agree with the previous study [], which suggests the orientation of annual ring plays an important role on the flexural behavior of wood in transverse direction. It also demonstrates that built micro three bending test system in this study is reliable for discussing the mechanical properties of wood.
 
 <img title="" src="../Figures/06_Hinoki_dis_MOE.png" alt="Hinoki_dis_MOE.png" width="479">
 
 Fig.5 mechanical properties of flat-swan, quarter-swan and rift-swan of hinoki specimens in transverse direction. (a) load and displacement of three types of hinoki specimens during micro three-point test. (b) MOE (modulus of elasticity) and MOR (modulus of rupture) of three types of hinoki specimen; the error bars indicate the standard deviation.
 
-#### 3.2 Validation of U-Net model and cell wall deformation tracking
+#### 3.2 Validation of U-Net model and large image prediction.
 
-discuss the training results
+The Fig.X (a) shows the evolution of binary cross entropy loss during 100 epochs training. After about 40 epochs training, the validation loss tended to became almost constant, while the loss continue to decreasing to about 0.1.  Four metrics were used for evaluating the trained model. The Table 1 should the average value of the four metrics with the standard deviation. The value of recall, precision and F1-score were about 0.82 and accuracy was about 0.92, which indicates a accurate segmentation model has been built.
 
-show the predicted mask (problem: the latewood part was not well predicted)
+The Fig.X (b) shows a example of input original image and Fig.X (c) is the predicted image of original image through the trained model. The combination of patch blending algorithm and the model seems to have a good performance to predict large image. The most of trachied cells were seems to be well segmented, while the partition of latewood trachied cells was not well predicted. It is known that the latewood trachied cell has quite small cell area and cell lumen makes it difficult to prepare the accurate masks from the image taken by the stereo microscope. To overcome the problem, the improvement of  image resolution will be needed by optimizing the methodology of microscopic observation. 
 
-the metrics was used for the model evaluation, the accurate model has been built
+
 
 <img title="" src="../Figures/07_large_img_predicted.png" alt="large_img_predicted.png" width="475">
 
@@ -104,15 +108,15 @@ Fig. 6 cell wall boundary prediction by trained U-net model. (a) binary cross en
 
 Table. 1 the evaluated metrics for predicted images by trained U-Net model. The values in parentheses indicate the standard deviation. 
 
-| accuracy     | f1_score     | recall       | precision    |
+| recall       | precision    | F1_score     | accuracy     |
 |:------------:|:------------:|:------------:|:------------:|
-| 0.92 (0.006) | 0.82 (0.017) | 0.82 (0.019) | 0.82 (0.017) |
+| 0.82 (0.019) | 0.82 (0.017) | 0.82 (0.017) | 0.92 (0.006) |
 
-
+![08_parameters_distribution.png](/Users/chen/Documents/GitHub/Tracking_cell_wall_deformation/Figures/08_parameters_distribution.png)
 
 Fig.X the distribution of typical parameters measured from one specimen.
 
-#### 3.3 Typical deformation pattern of three types of specimens
+#### 3.3 Typical deformation pattern of three types of specimens by individual cell tracking
 
 <img title="" src="../Figures/09_partial_deformation.png" alt="partial_deformation.png" width="473" data-align="inline">
 
