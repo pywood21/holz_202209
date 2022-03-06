@@ -1,6 +1,6 @@
 # Title:
 
-# Deformation of wood cell wall during three-point bending test studied by computer vision and machine learning
+# Flexural behavior of wood in transverse direction studied by computer vision and machine learning
 
 ---
 
@@ -16,25 +16,25 @@ E-mail: chenshuoye@gmail.com
 
 ## Keywords:
 
-Cell wall deformation, Mechanical property, Semantic segmentation, U-net, Computer vision, Deep learning, Particle tracking
+Cell wall deformation, Flexural behavior, Semantic segmentation, U-Net, Computer vision, Deep learning, Particle tracking
 
 ---
 
 ## 1. introduction
 
-Wood is a natural cellular material, it has complex structure with different cell types (anatomical features) acting together to serve the needs of living tree [1]. Also, as an anisotropic material,  wood has excellent mechanical properties parallel to the grain ( longitudinal direction), while its mechanical properties perpendicular to the grain (transverse direction) are relatively weak [2] and varied among different wood species with relation to their unique anatomical features [1]. 
+Wood is a natural cellular material, it has complex structure with different cell types (anatomical features) acting together to serve the needs of living tree [1]. Also, as an anisotropic material,  wood has excellent mechanical properties parallel to the grain ( longitudinal direction), while its mechanical properties perpendicular to the grain (transverse direction) are relatively weak [2] and varied among different wood species with relation to their unique anatomical features [1].
 
 From ancient time, human started to use wood as a construction materials for building civilization considering the microstructure of wood. For instance, a traditional roofing method called kokerabuki in Japanese.
 
-To completely unveil the relationship between anatomical features and mechanical behavior of wood, the quantitative and accurate analysis of local deformation of anatomical features during the mechanical test is an important subject. Up to now, wood scientists developed several approaches from two perspectives for understanding how anatomical features affect the mechanical behavior of wood in transverse direction. 
+To completely unveil the relationship between anatomical features and mechanical behavior of wood, the quantitative and accurate analysis of local deformation of anatomical features during the mechanical test is an important subject. Up to now, wood scientists developed several approaches from two perspectives for understanding how anatomical features affect the mechanical behavior of wood in transverse direction.
 
 The first one is **top-down perspective** that is direct microscopic observation of deformation of anatomical features during or after the mechanical test. Ando and Onda (1999) [3] used wet-type scanning electron microscope (SEM) to observe the compression of wood cell wall. Combing with image analysis, it was found that the first fracture of cell wall occurred in one tangential row of earlywood tracheids just after the load displacement curve exceeded the proportional limit. Müller et al. (2003) [4] observed cell deformation of both softwood (spruce) and hardwood (oak and beech) at different yielding stage of compression test by using both SEM and light microscope for concluding different fracture pattern of anatomical features in those species. Hwang et al. (2021) [5] used the replica method to intermittently analyze the cell wall deformation of flat-swan, quarter-swan and rift-swan in transverse direction of wood due to three point bending test. The rift-swan of softwood exhibited a unique shear deformation of earlywood cell wall contributing for the extremely large flexural deformation. Such direct microscopic observation methods provides important information to understand the in-situ deformation of wood microstructures.
 
 The second one is **bottom-up perspective** that is the mechanical simulation of wood properties considering its hierarchical structure.  Watanabe et al. [6-8] firstly used fast Fourier transform (FFT) to extract the characteristics such as axial length of tangential and radial cell wall, cell wall thickness, etc. of several conifer wood species for simulating the tangential Young's modulus by cell wall model. Ando and Onda [9] used generalized cell wall model to successfully simulated the first buckling mechanism of conifer wood cell wall under radial compression. Holmberg et al. [10] used finite element method (FEM) to simulate the nonlinear mechanical behavior considering the irregular cell shape, anisotrpic layer structure of the cell walls and the periodic variations in density of wood. And their simulated deformation and fracture of wood was similar to the those found in the refining process of wood. De Magistris and Salmén (2008) [11] investigate the compression and in combined shear and compression deformation of cell wall with anisotropic one-layer cell walls and orthotropic multi-layer cell wall models by finite element method (FEM) . Their results indicates the cell structures is the key factors influencing the deformation pattern.  Recently the multi-scale FEM is adopted to simulate wood compression behavior under both axis and transverse loading [12]. it was found that transverse deformation of wood is gradual and uniform,  while the loading velocity greatly affects wood microstructure failure modes in axial loading. Those developed approaches are quite useful and powerful for providing comprehensive explanation of mechanical behavior of  wood.
 
-On the other hand, in the field of computer vision, the semantic segmentation has been proposed as a important approach to label each pixel of an image with a corresponding class of what is represented. With the development of artificial intelligence, the deep-learning based semantic segmentation model such as U-Net[13], LinkNet [14], Feature Pyramid Networks [15], and Pyramid Scene Parsing Network [16] has been developed and those technology that has large field of application and already started to be applied into the field autonomous vehicles [17] and  analysis of biomedical image for medical diagnosis [18]. If the approach of semantic segmentation can also be adapted for analyzing the cell wall deformation, it provides a great possibility to simultaneously analyze almost all local changes in anatomical features and their interaction during the mechanical test. Furthermore, the observed information provides more accurate and quantitative image analysis and the collected cell wall geometry can also be used for more realistic mechanical simulation for optimizing developed both top-down and bottom-up approaches. 
+On the other hand, in the field of computer vision, the semantic segmentation has been proposed as a important approach to label each pixel of an image with a corresponding class of what is represented. With the development of artificial intelligence, the deep-learning based semantic segmentation model such as U-Net[13], LinkNet [14], Feature Pyramid Networks [15], and Pyramid Scene Parsing Network [16] has been developed and those technology that has large field of application and already started to be applied into the field autonomous vehicles [17] and  analysis of biomedical image for medical diagnosis [18]. If the approach of semantic segmentation can also be adapted for analyzing the cell wall deformation, it provides a great possibility to simultaneously analyze almost all local changes in anatomical features and their interaction during the mechanical test. Furthermore, the observed information provides more accurate and quantitative image analysis and the collected cell wall geometry can also be used for more realistic mechanical simulation for optimizing developed both top-down and bottom-up approaches.
 
-Therefore, in this study, the semantic segmentation model has been built for the partitioning of anatomical features of hinoki wood, and their local deformation during the micro three-point bending test were precisely analyzed with the help of individual cell tracking algorithm .
+Therefore, in this study, the semantic segmentation model has been built for the partitioning of anatomical features of hinoki wood, and their local deformation during the micro three-point bending test were precisely analyzed with the help of individual cell tracking algorithm.
 
 ## 2. materials and method
 
@@ -54,7 +54,7 @@ Fig. 1 The illustration of micro three-point bending test. (a) The illustrated a
 
 With the development of artificial intelligence, the fully convolutional networks (FCN) was proposed for conducting the semantic segmentation []. Furthermore, as an improvement of FCN, the U-Net architecture was proposed by Ronneberger et al.[] , which is designed to allow fewer training samples for model training.  It is a U-shape architecture consisting of encoder blocks, decoder blocks and skip connections. It has became one of the most popular approaches for any semantic segmentation tasks. Recently, the U-net model has been applied for the segmentation of plant tissues[] and xylem vessels in stained cross-section of wood with excellent accuracy.  Therefore, in this study, the U-Net has been selected for building model.
 
-For preparation of training dataset and model training, after the video taking during the bending test, the first image at every second of the video was captured for preparing the image sequence. The 12 original images with 256 pixels x 256 pixels were cropped from the image sequence recorded by. The watershed segmentation was firstly applied for label the boundary of wood cell wall. The unlabeled part was manually modified to make their corresponding ground truth masks with cell wall boundary labeled in white and background labeled in black were manually prepared. Finally, The 12 sets of original image and corresponding ground truth mask were used for building semantic segmentation model. And the asymmetric U-net architecture was used for the model training. The binary cross entropy loss was used. as the loss function, and adam was used as the optimizer. The learning rate was 0.0001. During the model traning, the augmentation was applied . (Fig.X )
+For preparation of training dataset and model training, after the video taking during the bending test, the first image at every second of the video was captured for preparing the image sequence. The 12 original images with 256 pixels x 256 pixels were cropped from the image sequence recorded by. The watershed segmentation was firstly applied for label the boundary of wood cell wall. The unlabeled part was manually modified to make their corresponding ground truth masks with cell wall boundary labeled in white and background labeled in black were manually prepared. Finally, The 12 sets of original image and corresponding ground truth mask were used for building semantic segmentation model. And the asymmetric U-net architecture was used for the model training. The binary cross entropy loss was used. as the loss function, and adam was used as the optimizer. The learning rate was 0.0001. During the model traning, the augmentation was applied (Fig.X).
 
 <img title="" src="../Figures/02_mask_preparation.png" alt="mask_preparation.png" data-align="inline" width="635">
 
@@ -62,7 +62,9 @@ Fig. 2 Preparation of data set for semantic segmentation model training. (a) Cro
 
 #### 2.4 Metrics for model evaluation
 
-Four metrics were used for evaluating the trained model. They were accuracy, recall, precision, and F1-score. Those metrics were calculated from true positive (TP), false positive (FP), true negative (TN) and false negative (FN) obtained from the confusion matrix for the binary classification of cell boundary and background. The formula for the calculation were showed as below:
+Four metrics were used for evaluating the trained model. They were accuracy, recall, precision, and f1-score. Those metrics were calculated from true positive (TP), false positive (FP), true negative (TN) and false negative (FN) obtained from the confusion matrix for the binary classification of cell boundary and background. The formula for the calculation were showed as below:
+
+<img src="../Figures/metrics.png" title="" alt="metrics.png" width="271">
 
 #### 2.5 image prediction and individual cell tracking
 
@@ -74,9 +76,9 @@ Fig.3 tracking the cell wall deformation during mechanical test. (a) watershed s
 
 #### 2.6 parameters measurement for cell wall deformation analysis
 
-Finally, after the tracking of individual cells existing at every image sequence, the area, eccentricity, length of major and minor axis of fitted ellipse, and length of vertical and horizontal length of bounding box for each cell wall were measured (Fig.X). Those measurements were implemented by python package: scikit-image[] ?. Furthermore, the fitted ellipse aspect ratio and the aspect ratio of vertical and bounding box aspect ratio were calculated. For evaluating the intensity of cell wall deformation, the changes in area, eccentricity, fitted ellipse aspect ratio and bounding box aspect ratio were calculated based on the following equation:
+Finally, after the tracking of individual cells existing at every image sequence, the area, eccentricity, length of major and minor axis of fitted ellipse, and length of vertical and horizontal length of bounding box for each cell wall were measured (Fig.X). Those measurements were implemented by python package: scikit-image[]. Furthermore, the fitted ellipse aspect ratio and the aspect ratio of vertical and bounding box aspect ratio were calculated. For evaluating the intensity of cell wall deformation, the changes in area, eccentricity, fitted ellipse aspect ratio and bounding box aspect ratio were calculated based on the following equation:
 
-<img title="" src="../Figures/05_parameters_calculation.png" alt="parameters_calculation.png" data-align="inline" width="413">
+<img title="" src="../Figures/05_parameters_calculation.png" alt="parameters_calculation.png" data-align="inline" width="429">
 
 the n indicates the order of the observed image sequence. The i indicates the measured parameters showed on Fig.X.
 
@@ -100,23 +102,23 @@ The Fig.X (a) shows the evolution of binary cross entropy loss during 100 epochs
 
 The Fig.X (b) shows a example of input original image and Fig.X (c) is the predicted image of original image through the trained model. The combination of patch blending algorithm and the model seems to have a good performance to predict large image. The most of trachied cells were seems to be well segmented, while the partition of latewood trachied cells was not well predicted. It is known that the latewood trachied cell has quite small cell area and cell lumen makes it difficult to prepare the accurate masks from the image taken by the stereo microscope. To overcome the problem, the improvement of  image resolution will be needed by optimizing the methodology of microscopic observation. 
 
-
-
-<img title="" src="../Figures/07_large_img_predicted.png" alt="large_img_predicted.png" width="475">
-
-Fig. 6 cell wall boundary prediction by trained U-net model. (a) binary cross entropy loss plotted against the training epochs; (b) input original image; (c) predicted image. The scale bar indicates length of 400 *μ*m
-
-Table. 1 the evaluated metrics for predicted images by trained U-Net model. The values in parentheses indicate the standard deviation. 
+Table. 1 the evaluated metrics for predicted images by trained U-Net model. The values in parentheses indicate the standard deviation.
 
 | recall       | precision    | F1_score     | accuracy     |
 |:------------:|:------------:|:------------:|:------------:|
 | 0.82 (0.019) | 0.82 (0.017) | 0.82 (0.017) | 0.92 (0.006) |
 
-![08_parameters_distribution.png](/Users/chen/Documents/GitHub/Tracking_cell_wall_deformation/Figures/08_parameters_distribution.png)
+<img title="" src="../Figures/07_large_img_predicted.png" alt="large_img_predicted.png" width="475">
 
-Fig.X the distribution of typical parameters measured from one specimen.
+Fig. 6 cell wall boundary prediction by trained U-net model. (a) binary cross entropy loss plotted against the training epochs; (b) input original image; (c) predicted image. The scale bar indicates length of 400 *μ*m.
 
-#### 3.3 Typical deformation pattern of three types of specimens by individual cell tracking
+The Fig.X shows the distribution of typical parameters measured from the segmented cells. The area range 
+
+<img title="" src="../Figures/08_parameters_distribution.png" alt="08_parameters_distribution.png" width="754">
+
+Fig.X the distribution of cell area, cell eccentricity, cell tangential diameter and radial diameter measured from one specimen before.
+
+#### 3.3 Typical deformation patterns of three types of specimens by individual cell tracking
 
 <img title="" src="../Figures/09_partial_deformation.png" alt="partial_deformation.png" width="473" data-align="inline">
 
@@ -128,17 +130,17 @@ show the map with several parameters as example, discuss the cell wall deformati
 
 ![flat-sawn_map.png](../Figures/10_flat-sawn_map.png)
 
-Fig. 8 Intensity of cell wall deformation of flat-sawn specimen during micro three-point bending test evaluated by .
+Fig. 8 Intensity of cell wall deformation of flat-sawn specimen during micro three-point bending test evaluated by.
 
 ![quarter-sawn_map.png](../Figures/11_quarter-sawn_map.png)
 
-Fig. 9 Intensity of cell wall deformation of quarter-sawn specimen during micro three-point bending test evaluated by .
+Fig. 9 Intensity of cell wall deformation of quarter-sawn specimen during micro three-point bending test evaluated by.
 
 ![rift-sawn_map.png](../Figures/12_rift-sawn_map.png)
 
-Fig. 10 Intensity of cell wall deformation of rift-sawn specimen during micro three-point bending test evaluated by .
+Fig. 10 Intensity of cell wall deformation of rift-sawn specimen during micro three-point bending test evaluated by.
 
-#### 3.5 Relationship between changes in intensity of cell wall deformation and Stress-strain curve
+#### 3.5 Relationship between changes in intensity of cell wall deformation and stress-strain curve
 
 The variety of the cell wall deformation pattern and its relationship with  strain-stress curve
 
