@@ -56,7 +56,9 @@ With the development of artificial intelligence, the fully convolutional network
 
 For preparation of training dataset and model training, after the video taking during the bending test, the first image at every second of the video was captured for preparing the image sequence. The 12 original images with 256 pixels x 256 pixels were cropped from the image sequence recorded by. The watershed segmentation was firstly applied for label the boundary of wood cell wall. The unlabeled part was manually modified to make their corresponding ground truth masks with cell wall boundary labeled in white and background labeled in black were manually prepared. Finally, The 12 sets of original image and corresponding ground truth mask were used for building semantic segmentation model. And the asymmetric U-net architecture was used for the model training. The binary cross entropy loss was used. as the loss function, and adam was used as the optimizer. The learning rate was 0.0001. During the model traning, the augmentation was applied (Fig.X).
 
-<img title="" src="../Figures/02_mask_preparation.png" alt="mask_preparation.png" data-align="inline" width="635">
+<img title="" src="../Figures/02_mask_preparation.png" alt="02_mask_preparation.png" data-align="inline" width="569">
+
+
 
 Fig. 2 Preparation of data set for semantic segmentation model training. (a) Cropped patch of cross section of wood; (b) cell wall boundary labeled mask by watershed segmentation algorithm (c) manually corrected image mask. The scale bar indicates length of 100 *μ*m
 
@@ -116,7 +118,7 @@ The Fig.X shows the distribution of typical parameters measured from the segment
 
 <img title="" src="../Figures/08_parameters_distribution.png" alt="08_parameters_distribution.png" width="754">
 
-Fig.X the distribution of cell area, cell eccentricity, cell tangential diameter and radial diameter measured from one specimen before.
+Fig.X the distribution of cell area (a), cell eccentricity (b), cell tangential diameter (c) and radial diameter measured from one specimen before.
 
 #### 3.3 Typical deformation patterns of three types of specimens by individual cell tracking
 
@@ -187,7 +189,7 @@ Fig.11
 
 > 16. Zhao H, Shi J, Qi X, Wang X, Jia J (2017) Pyramid scene pars-ing network. In: 2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), IEEE, 2017, pp. 2881–2890 .
 
-> 17. Janai J, Güney F, Behl A,Geiger A (2020) Computer Vision for Autonomous Vehicles: Problems, Datasets and State of the Art. Found. Trends Comput Graph Vis 12, 85.
+> 17. Janai J, Güney F, Behl A,Geiger A (2020) Computer Vision for Autonomous Vehicles: Problems, Datasets and State of the Art. Found. Trends Comput Graph Vis 12, 85. ???
 
 > 18. Müller D, Kramer F. (2021) MIScnn: a framework for medical image segmentation with convolutional neural networks and deep learning. BMC Med Imaging 21: 12.
 
