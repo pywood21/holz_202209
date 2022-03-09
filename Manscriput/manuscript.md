@@ -58,8 +58,6 @@ For preparation of training dataset and model training, after the video taking d
 
 <img title="" src="../Figures/02_mask_preparation.png" alt="02_mask_preparation.png" data-align="inline" width="569">
 
-
-
 Fig. 2 Preparation of data set for semantic segmentation model training. (a) Cropped patch of cross section of wood; (b) cell wall boundary labeled mask by watershed segmentation algorithm (c) manually corrected image mask. The scale bar indicates length of 100 *μ*m
 
 #### 2.4 Metrics for model evaluation
@@ -92,11 +90,13 @@ Fig.4 the measurement parameters to evaluate the intensity of deformation of cel
 
 #### 3.1 flexural behavior of flat-sawn, quarter-sawn and rift-sawn in transverse direction
 
-The Fig.X shows the difference in the mechanical properties of flat-, quarter-, and rift- sawn in transverse direction. During the micro three-point bending test, the rift-sawn specimen showed smallest load with largest displacement, resulting the smallest modulus of elasticity (MOE) and modulus of rupture (MOR) (Fig. X (a)). And the quarter-sawn showed the largest MOE and MOR (Fig.X (b)). Those results agree with the previous study [], which suggests the orientation of annual ring plays an important role on the flexural behavior of wood in transverse direction. It also demonstrates that built micro three bending test system in this study is reliable for discussing the mechanical properties of wood.
-
-<img title="" src="../Figures/06_Hinoki_dis_MOE.png" alt="Hinoki_dis_MOE.png" width="479">
+![06_Hinoki_dis_MOE.png](../Figures/06_Hinoki_dis_MOE.png)
 
 Fig.5 mechanical properties of flat-swan, quarter-swan and rift-swan of hinoki specimens in transverse direction. (a) load and displacement of three types of hinoki specimens during micro three-point test. (b) MOE (modulus of elasticity) and MOR (modulus of rupture) of three types of hinoki specimen; the error bars indicate the standard deviation.
+
+The Fig.X shows the difference in the mechanical properties of flat-, quarter-, and rift- sawn in transverse direction. During the micro three-point bending test, the rift-sawn specimen showed smallest load with largest displacement, resulting the smallest modulus of elasticity (MOE) and modulus of rupture (MOR) (Fig. X (a)). And the quarter-sawn showed the largest MOE and MOR (Fig.X (b)). If we assume the linear stage of load-displacement as elastic region and nonlinear as plastic region. The rift-sawn specimen has showed the larger 
+
+Those results agree with the previous study [], which suggests the orientation of annual ring plays an important role on the flexural behavior of wood in transverse direction. It also demonstrates that built micro three bending test system in this study is reliable for discussing the mechanical properties of wood.
 
 #### 3.2 Validation of U-Net model and large image prediction.
 
@@ -104,9 +104,11 @@ The Fig.X (a) shows the evolution of binary cross entropy loss during 100 epochs
 
 The Fig.X (b) shows a example of input original image and Fig.X (c) is the predicted image of original image through the trained model. The combination of patch blending algorithm and the model seems to have a good performance to predict large image. The most of trachied cells were seems to be well segmented, while the partition of latewood trachied cells was not well predicted. It is known that the latewood trachied cell has quite small cell area and cell lumen makes it difficult to prepare the accurate masks from the image taken by the stereo microscope. To overcome the problem, the improvement of  image resolution will be needed by optimizing the methodology of microscopic observation. 
 
+To further confirm the accuracy of the segmentation. The geometry parameters (cell area, cell eccentricity, cell) were measured.
+
 Table. 1 the evaluated metrics for predicted images by trained U-Net model. The values in parentheses indicate the standard deviation.
 
-| recall       | precision    | F1_score     | accuracy     |
+| recall       | precision    | F1           | accuracy     |
 |:------------:|:------------:|:------------:|:------------:|
 | 0.82 (0.019) | 0.82 (0.017) | 0.82 (0.017) | 0.92 (0.006) |
 
@@ -121,6 +123,10 @@ The Fig.X shows the distribution of typical parameters measured from the segment
 Fig.X the distribution of cell area (a), cell eccentricity (b), cell tangential diameter (c) and radial diameter measured from one specimen before.
 
 #### 3.3 Typical deformation patterns of three types of specimens by individual cell tracking
+
+The Fig.7 showed the typical deformation pattern of located at the compression part and tension part of three types of specimens. The on-axis loading seems to occur at the compression and tension of wood was observed for both flat-sawn and quarter-sawn. Tension and compression of tangential and radial cell wall were observed .
+
+The 
 
 <img title="" src="../Figures/09_partial_deformation.png" alt="partial_deformation.png" width="473" data-align="inline">
 
@@ -142,9 +148,11 @@ Fig. 9 Intensity of cell wall deformation of quarter-sawn specimen during micro 
 
 Fig. 10 Intensity of cell wall deformation of rift-sawn specimen during micro three-point bending test evaluated by.
 
+At the elastic region, seems to show slight and varied deformation. When entering the plastic region, the concentrated deformation was observed at the innermost part of the compression part and outermost of the tension part. And such deformation reaches the maximum before the fracture of the specimen. Such large deformation is involved by the shear deformation of the cell wall along with the radial file unit.
+
 #### 3.5 Relationship between changes in intensity of cell wall deformation and stress-strain curve
 
-The variety of the cell wall deformation pattern and its relationship with  strain-stress curve
+As desribed above, the changes in area, changes in bounding box aspect ratio , and change in fitted ellipse aspect ratio have been concluded as suitable parameters discussing the deformation of cell for flat-sawn, quarter-sawn and rift-sawn, respectively. Therefore, the k-means clustering algorithm was applied to summarize the deformation pattern. And their relationship between strain and stress of the specimen were 
 
 ![kmeans_clustering_pattern.png](../Figures/13_kmeans_clustering_pattern.png)
 
