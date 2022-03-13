@@ -14,9 +14,11 @@ E-mail: chenshuoye@gmail.com
 
 ## Abstract
 
+A deep-learning based semantic segmentation approach (U-Net) was used to partition anatomical features in cross section of hinoki during micro three-point bending test. With the help of Crocker-Grier linking algorithm, thousands of cells were successfully extracted. Then, several parameters (area, eccentricity, major/minor axis length, vertical/horizontal bounding box length) were used to evaluate the intensity of their deformation. Finally, 2D mapping of a deformation intensity distribution was successfully built. The novel approach developed in this study showed the great possibility for understanding the relationship between anatomical features and mechanical behavior of wood.
+
 ## Keywords:
 
-Cell wall deformation, Flexural behavior, Semantic segmentation, U-Net, Computer vision, Deep learning, Particle tracking
+Flexural behavior, Cell wall deformation, Semantic segmentation, Individual cell tracking, Computer vision, Deep learning
 
 ---
 
@@ -24,7 +26,7 @@ Cell wall deformation, Flexural behavior, Semantic segmentation, U-Net, Computer
 
 Wood is a natural cellular material, it has complex structure with different cell types (anatomical features) acting together to serve the needs of living tree [1]. Also, as an anisotropic material,  wood has excellent mechanical properties parallel to the grain ( longitudinal direction), while its mechanical properties perpendicular to the grain (transverse direction) are relatively weak [2] and varied among different wood species with relation to their unique anatomical features [1].
 
-From ancient time, human started to use wood as a construction materials for building civilization considering the microstructure of wood. For instance, a traditional roofing method called kokerabuki in Japanese.
+From ancient time, human started to use wood as a construction materials for building civilization considering the microstructure of wood in transverse direction. For instance, a traditional roofing method called kokerabuki in Japanese.
 
 To completely unveil the relationship between anatomical features and mechanical behavior of wood, the quantitative and accurate analysis of local deformation of anatomical features during the mechanical test is an important subject. Up to now, wood scientists developed several approaches from two perspectives for understanding how anatomical features affect the mechanical behavior of wood in transverse direction.
 
@@ -52,9 +54,7 @@ Fig. 1 The illustration of micro three-point bending test. (a) The illustrated a
 
 #### 2.3 Deep learning based semantic segmentation model
 
-With the development of artificial intelligence, the fully convolutional networks (FCN) was proposed for conducting the semantic segmentation []. Furthermore, as an improvement of FCN, the U-Net architecture was proposed by Ronneberger et al.[] , which is designed to allow fewer training samples for model training.  It is a U-shape architecture consisting of encoder blocks, decoder blocks and skip connections. It has became one of the most popular approaches for any semantic segmentation tasks. Recently, the U-net model has been applied for the segmentation of plant tissues[] and xylem vessels in stained cross-section of wood with excellent accuracy.  Therefore, in this study, the U-Net has been selected for building model.
-
-For preparation of training dataset and model training, after the video taking during the bending test, the first image at every second of the video was captured for preparing the image sequence. The 12 original images with 256 pixels x 256 pixels were cropped from the image sequence recorded by. The watershed segmentation was firstly applied for label the boundary of wood cell wall. The unlabeled part was manually modified to make their corresponding ground truth masks with cell wall boundary labeled in white and background labeled in black were manually prepared. Finally, The 12 sets of original image and corresponding ground truth mask were used for building semantic segmentation model. And the asymmetric U-net architecture was used for the model training. The binary cross entropy loss was used. as the loss function, and adam was used as the optimizer. The learning rate was 0.0001. During the model traning, the augmentation was applied (Fig.X).
+For preparation of training dataset and model training, after the video taking during the bending test, the first image at every second of the video was captured for preparing the image sequence. The 12 original images with 256 pixels x 256 pixels were cropped from the image sequence recorded by. The watershed segmentation was firstly applied for label the boundary of wood cell wall. The unlabeled part was manually modified to make their corresponding ground truth masks with cell wall boundary labeled in white and background labeled in black were manually prepared. Finally, The 12 sets of original image and corresponding ground truth mask were used for building semantic segmentation model. And the asymmetric U-net architecture was used for the model training. The binary cross entropy loss was used. as the loss function, and adam was used as the optimizer. The learning rate was 0.0001. During the model training, the augmentation was applied (Fig.X).
 
 <img title="" src="../Figures/02_mask_preparation.png" alt="02_mask_preparation.png" data-align="inline" width="569">
 
@@ -94,17 +94,19 @@ Fig.4 the measurement parameters to evaluate the intensity of deformation of cel
 
 Fig.5 mechanical properties of flat-swan, quarter-swan and rift-swan of hinoki specimens in transverse direction. (a) load and displacement of three types of hinoki specimens during micro three-point test. (b) MOE (modulus of elasticity) and MOR (modulus of rupture) of three types of hinoki specimen; the error bars indicate the standard deviation.
 
-The Fig.X shows the difference in the mechanical properties of flat-, quarter-, and rift- sawn in transverse direction. During the micro three-point bending test, the rift-sawn specimen showed smallest load with largest displacement, resulting the smallest modulus of elasticity (MOE) and modulus of rupture (MOR) (Fig. X (a)). And the quarter-sawn showed the largest MOE and MOR (Fig.X (b)). If we assume the linear stage of load-displacement as elastic region and nonlinear as plastic region. The rift-sawn specimen has showed the larger 
+The Fig.5 shows the difference in the mechanical properties of flat-, quarter-, and rift- sawn in transverse direction. During the micro three-point bending test, the rift-sawn specimen showed smallest load with largest displacement at around 3.3 mm, resulting the smallest modulus of elasticity (MOE) and modulus of rupture (MOR) (Fig. X (a)). If we assume the linear stage of load-displacement as elastic region and nonlinear as plastic region. The rift-sawn specimen showed the largest plastic region. In contrast,  the quarter-sawn showed the largest MOE and MOR (Fig.X (b)) with the smallest plastic region.
 
-Those results agree with the previous study [], which suggests the orientation of annual ring plays an important role on the flexural behavior of wood in transverse direction. It also demonstrates that built micro three bending test system in this study is reliable for discussing the mechanical properties of wood.
+Those results agree with the previous study [5], which suggests the orientation of annual ring plays an important role on the flexural behavior of wood in transverse direction. It also demonstrates that built micro three bending test system in this study is reliable for discussing the mechanical properties of wood.
 
 #### 3.2 Validation of U-Net model and large image prediction.
 
-The Fig.X (a) shows the evolution of binary cross entropy loss during 100 epochs training. After about 40 epochs training, the validation loss tended to became almost constant, while the loss continue to decreasing to about 0.1.  Four metrics were used for evaluating the trained model. The Table 1 should the average value of the four metrics with the standard deviation. The value of recall, precision and F1-score were about 0.82 and accuracy was about 0.92, which indicates a accurate segmentation model has been built.
+With the development of artificial intelligence, the fully convolutional networks (FCN) was proposed for conducting the semantic segmentation []. Furthermore, as an improvement of FCN, the U-Net architecture was proposed by Ronneberger et al.[] , which is designed to allow fewer training samples for model training. It is a U-shape architecture consisting of encoder blocks, decoder blocks and skip connections. It has became one of the most popular approaches for any semantic segmentation tasks. Recently, the U-net model has been applied for the segmentation of plant tissues[] and xylem vessels in stained cross-section of wood with excellent accuracy. Therefore, in this study, the U-Net has been selected for building model.
 
-The Fig.X (b) shows a example of input original image and Fig.X (c) is the predicted image of original image through the trained model. The combination of patch blending algorithm and the model seems to have a good performance to predict large image. The most of trachied cells were seems to be well segmented, while the partition of latewood trachied cells was not well predicted. It is known that the latewood trachied cell has quite small cell area and cell lumen makes it difficult to prepare the accurate masks from the image taken by the stereo microscope. To overcome the problem, the improvement of  image resolution will be needed by optimizing the methodology of microscopic observation. 
+The Fig.X (a) shows the evolution of binary cross entropy loss during 100 epochs training with U-Net architecture. After about 40 epochs training, the validation loss tended to became almost constant, while the loss continue to decreasing to about 0.1.  Four metrics were used for evaluating the trained model. The Table 1 showed the averaged value of those four metrics with the standard deviation. 
 
-To further confirm the accuracy of the segmentation. The geometry parameters (cell area, cell eccentricity, cell) were measured.
+The Fig.X (b) shows a example of input original image and Fig.X (c) is the predicted image of original image through the trained model. The combination of patch blending algorithm [] and the model worked well to predict large image. The most of trachied cells seemed to be well segmented, while the partition of latewood trachied cells was not well predicted. It is known that the latewood trachied cell has quite small cell area and cell lumen makes it difficult to prepare the accurate masks from the image taken by the stereo microscope. To overcome the problem, the improvement of  image resolution will be needed by optimizing the methodology of microscopic observation. 
+
+To further confirm the accuracy of the segmentation, the geometry parameters of a flat-swan specimen were measured. The vertical bounding box and horizontal bounding box were regraded as cell radial diameter and cell tangential diameter. The Fig.X showed the distribution of typical parameters measured from the segmented cells. The averaged cell area, cell eccentricity, cell radial diameter and cell tangential diameter were 955 *μ*m<sup>2</sup> (306), 0.596 (0.146), 37.5 *μ*m (7.63) and 34.8 *μ*m (6.62), respectively. Those measured values agree with the previous research [] suggesting a accurate segmentation model has been built.
 
 Table. 1 the evaluated metrics for predicted images by trained U-Net model. The values in parentheses indicate the standard deviation.
 
@@ -116,17 +118,21 @@ Table. 1 the evaluated metrics for predicted images by trained U-Net model. The 
 
 Fig. 6 cell wall boundary prediction by trained U-net model. (a) binary cross entropy loss plotted against the training epochs; (b) input original image; (c) predicted image. The scale bar indicates length of 400 *μ*m.
 
-The Fig.X shows the distribution of typical parameters measured from the segmented cells. The area range 
-
-<img title="" src="../Figures/08_parameters_distribution.png" alt="08_parameters_distribution.png" width="754">
+<img title="" src="../Figures/08_parameters_distribution.png" alt="08_parameters_distribution.png" data-align="inline">
 
 Fig.X the distribution of cell area (a), cell eccentricity (b), cell tangential diameter (c) and radial diameter measured from one specimen before.
 
 #### 3.3 Typical deformation patterns of three types of specimens by individual cell tracking
 
-The Fig.7 showed the typical deformation pattern of located at the compression part and tension part of three types of specimens. The on-axis loading seems to occur at the compression and tension of wood was observed for both flat-sawn and quarter-sawn. Tension and compression of tangential and radial cell wall were observed .
+The Fig.7 showed a typical deformation pattern of tracheid earlywood cell wall located at the compression part and tension part of three types of specimens. The changes in shape of cell walls during the mechanical test were intermittently extracted.
 
-The 
+For flat-sawn specimen, the compression and tension of tangential cell wall were observed at the compression and tension part of specimen, respectively.
+
+For quarter-swan,  the deformation pattern were observed at radial cell wall. It is because the orientation of the cell wall in quarter-swan was orthogonal to that of flat-swan. As quarter-swan was fractured when displacement reach to around only 1 mm, the dimensional changes of cell wall were relatively smaller than that of flat-swan. 
+
+Different with flat- and quarter-sawn specimen, the cell walls in rift-sawn showed different deformation pattern.  The shear deformation of cell wall was observed at both compression part and tension part. We suppose 
+
+wine-rack structure
 
 <img title="" src="../Figures/09_partial_deformation.png" alt="partial_deformation.png" width="473" data-align="inline">
 
@@ -134,7 +140,21 @@ Fig.7 typical deformation of wood cell wall for three types of hinoki specimens 
 
 #### 3.4 Visualization of cell wall deformation evaluated by parameters
 
-show the map with several parameters as example, discuss the cell wall deformation from elastic region to plastic region
+The individual cell tracking algorithm performed well to extract thousands of common trachied cells existing at image sequence. After evaluating the intensity of the deformation. the 2d mapping was successfully built.
+
+The Fig.X, Fig.X and Fig.X showed.....
+
+Generally, at the elastic region, all specimens showed slight and varied deformation. 
+
+When entering the plastic region, the cell wall deformation distribution differed.
+
+For flat-swan, the presence of the latewood to restrict the deformation in compression part. The area seems to be the most suitable parameters
+
+For quarter-swan, the ray for quarter-swan to restrict the deformation, and induce the
+
+For rift-swan, the concentrated deformation was observed at the innermost part of the compression part and outermost of the tension part for rift-sawn specimen. And such deformation reaches the maximum before the fracture of the specimen. Such large deformation is involved by the shear deformation of the cell wall along with the radial file unit.  the large deformation is contributed to the concentrated deformation of cell wall. And it makes it easier to predict the starting point of the fracture.
+
+The ray might play an important role on to restrict the cell wall along the radial file, 
 
 ![flat-sawn_map.png](../Figures/10_flat-sawn_map.png)
 
@@ -148,17 +168,25 @@ Fig. 9 Intensity of cell wall deformation of quarter-sawn specimen during micro 
 
 Fig. 10 Intensity of cell wall deformation of rift-sawn specimen during micro three-point bending test evaluated by.
 
-At the elastic region, seems to show slight and varied deformation. When entering the plastic region, the concentrated deformation was observed at the innermost part of the compression part and outermost of the tension part. And such deformation reaches the maximum before the fracture of the specimen. Such large deformation is involved by the shear deformation of the cell wall along with the radial file unit.
+<img title="" src="../Figures/Fracture_pattern.png" alt="Fracture_pattern.png" width="257" data-align="center">
+
+Fig.X the fracture of the flat-, quarter-, and rift- swan specimen taken after micro three-point bending test. The scale bar indicates 400 $μ$m.
 
 #### 3.5 Relationship between changes in intensity of cell wall deformation and stress-strain curve
 
-As desribed above, the changes in area, changes in bounding box aspect ratio , and change in fitted ellipse aspect ratio have been concluded as suitable parameters discussing the deformation of cell for flat-sawn, quarter-sawn and rift-sawn, respectively. Therefore, the k-means clustering algorithm was applied to summarize the deformation pattern. And their relationship between strain and stress of the specimen were 
+As desribed above, the changes in area, changes in bounding box aspect ratio , and change in fitted ellipse aspect ratio have been concluded as suitable parameters discussing the deformation of cell for flat-sawn, quarter-sawn and rift-sawn, respectively. 
+
+Therefore, the k-means clustering algorithm was applied to summarize the deformation pattern. And their relationship between strain and stress of the specimen were showed at Fig.11.
 
 ![kmeans_clustering_pattern.png](../Figures/13_kmeans_clustering_pattern.png)
 
 Fig.11
 
 ## 4. Conclusion
+
+A  deep-learning based semantic segmentation approach (U-Net) was used to partition anatomical features in cross section of hinoki during the micro three-point bending test. With the help of Crocker-Grier linking algorithm, thousands of cells were successfully extracted. Then, several parameters (area, eccentricity, major/minor axis length, vertical/horizontal bounding box length) were used to evaluate the intensity of
+their deformation. Finally, 2D mapping of a deformation intensity distribution
+was successfully built. The novel approach developed in this study showed the great possibility for understanding the relationship between anatomical features and the mechanical behavior of wood.
 
 ## 5. Reference
 
