@@ -54,7 +54,7 @@ Fig. 1 The illustration of micro three-point bending test. (a) The illustrated a
 
 #### 2.3 Deep learning based semantic segmentation model
 
-For preparation of training dataset and model training, after the video taking during the bending test, the first image at every second of the video was captured for preparing the image sequence. The 12 original images with 256 pixels x 256 pixels were cropped from the image sequence recorded by. The watershed segmentation was firstly applied for label the boundary of wood cell wall. The unlabeled part was manually modified to make their corresponding ground truth masks with cell wall boundary labeled in white and background labeled in black were manually prepared. Finally, The 12 sets of original image and corresponding ground truth mask were used for building semantic segmentation model. And the asymmetric U-net architecture was used for the model training. The binary cross entropy loss was used. as the loss function, and adam was used as the optimizer. The learning rate was 0.0001. During the model training, the augmentation was applied (Fig.X).
+For preparation of training dataset and model training, after the video taking during the bending test, the first image at every second of the video was captured for preparing the image sequence. The 12 original images with 256 pixels x 256 pixels were cropped from the image sequence recorded by. The watershed segmentation was firstly applied for label the boundary of wood cell wall. The unlabeled part was manually modified to make their corresponding ground truth masks with cell wall boundary labeled in white and background labeled in black were manually prepared. Finally, The 12 sets of original image and corresponding ground truth mask were used for building semantic segmentation model. And the asymmetric U-net architecture was used for the model training. The binary cross entropy was used as the loss function, and adam was used as the optimizer. The learning rate was 0.0001. During the model training, the augmentation of image by image generator was applied (Fig.2).
 
 <img title="" src="../Figures/02_mask_preparation.png" alt="02_mask_preparation.png" data-align="inline" width="569">
 
@@ -106,7 +106,7 @@ The Fig.X (a) shows the evolution of binary cross entropy loss during 100 epochs
 
 The Fig.X (b) shows a example of input original image and Fig.X (c) is the predicted image of original image through the trained model. The combination of patch blending algorithm [] and the model worked well to predict large image. The most of trachied cells seemed to be well segmented, while the partition of latewood trachied cells was not well predicted. It is known that the latewood trachied cell has quite small cell area and cell lumen makes it difficult to prepare the accurate masks from the image taken by the stereo microscope. To overcome the problem, the improvement of  image resolution will be needed by optimizing the methodology of microscopic observation. 
 
-To further confirm the accuracy of the segmentation, the geometry parameters of a flat-swan specimen were measured. The vertical bounding box and horizontal bounding box were regraded as cell radial diameter and cell tangential diameter. The Fig.X showed the distribution of typical parameters measured from the segmented cells. The averaged cell area, cell eccentricity, cell radial diameter and cell tangential diameter were 955 *μ*m<sup>2</sup> (306), 0.596 (0.146), 37.5 *μ*m (7.63) and 34.8 *μ*m (6.62), respectively. Those measured values agree with the previous research [] suggesting a accurate segmentation model has been built.
+To further confirm the accuracy of the segmentation, the geometry parameters of a flat-swan specimen were measured. The vertical bounding box and horizontal bounding box were regraded as cell radial diameter and cell tangential diameter. The Fig.X showed the distribution of typical parameters measured from the segmented cells. The averaged cell area, cell eccentricity, cell radial diameter and cell tangential diameter were 955 *μ*m<sup>2</sup> (306), 0.596 (0.146), 37.5 *μ*m (7.63) and 34.8 *μ*m (6.62), respectively. Those measured geometry values agree with the previous research [] suggesting a accurate segmentation model has been built.
 
 Table. 1 the evaluated metrics for predicted images by trained U-Net model. The values in parentheses indicate the standard deviation.
 
@@ -122,23 +122,21 @@ Fig. 6 cell wall boundary prediction by trained U-net model. (a) binary cross en
 
 Fig.X the distribution of cell area (a), cell eccentricity (b), cell tangential diameter (c) and radial diameter measured from one specimen before.
 
-#### 3.3 Typical deformation patterns of three types of specimens by individual cell tracking
+#### 3.3 Typical deformation patterns of tracheid cell wall in three types of specimens
 
-The Fig.7 showed a typical deformation pattern of tracheid earlywood cell wall located at the compression part and tension part of three types of specimens. The changes in shape of cell walls during the mechanical test were intermittently extracted.
+The Fig.7 showed a typical deformation pattern of tracheid earlywood cell wall located at the compression part and tension part of three types of specimens. The changes in shape of single cell wall located at both compression part and tension part of specimen during the mechanical test were intermittently extracted. And our results agree with the previous study that use replica method to intermittently observe cell wall deformation of rift-swan specimen [].
 
-For flat-sawn specimen, the compression and tension of tangential cell wall were observed at the compression and tension part of specimen, respectively.
+For flat-sawn specimen, a uniaxial compression and tension of tangential cell wall were possibly occurred at the compression and tension part of specimen, respectively. And because of the orthogonal orientation of cell wall in quarter-swan, the deformation of radial cell wall was observed. As quarter-swan was fractured when displacement reach to around only 1 mm, the dimensional changes of cell wall were relatively smaller than that of flat-swan. 
 
-For quarter-swan,  the deformation pattern were observed at radial cell wall. It is because the orientation of the cell wall in quarter-swan was orthogonal to that of flat-swan. As quarter-swan was fractured when displacement reach to around only 1 mm, the dimensional changes of cell wall were relatively smaller than that of flat-swan. 
-
-Different with flat- and quarter-sawn specimen, the cell walls in rift-sawn showed different deformation pattern.  The shear deformation of cell wall was observed at both compression part and tension part. We suppose 
-
-wine-rack structure
+Different with flat- and quarter-sawn specimen, the cell walls in rift-sawn showed different deformation pattern.  The shear deformation of cell wall along the vertical and horizontal direction was observed at compression part and tension part, respectively. Furthermore, such orientation of tracheid cells was quite similar to the uniaxial loading of honeycombs in the in-plane off-axial direction. Li et al.[] have simulated the in-plane yield strengths of the square honeycombs in different direction under the compression by theoretical approach and FEM method. They have concluded the square honeycombs show a strong anisotropy when loaded in different orientations. And the numerical simulation indicates that the axial yield strength of the square honeycomb have minimum values at the angle of orientation with 37 degree to 38 degree, which corresponding to the orientation of annual ring for rift-swan. Therefore,  we suppose such shear deformation induced by the off-axis loading of trachied cell is responsible for the large displacement, relatively low MOE and MOR of rift-swan specimen.
 
 <img title="" src="../Figures/09_partial_deformation.png" alt="partial_deformation.png" width="473" data-align="inline">
 
-Fig.7 typical deformation of wood cell wall for three types of hinoki specimens during micro three-point bending test. (a) cell wall deformation of flat-swan specimen, upper: compression part, lower: tension part; (b) cell wall deformation of quarter-swan specimen, upper: compression part, lower: tension part; (c) cell wall deformation of rift-swan specimen, upper: compression part, lower: tension part. The scale bar indicates 50 μm
+Fig.7 Typical deformation of wood cell wall for three types of hinoki specimens during micro three-point bending test. (a) cell wall deformation of flat-swan specimen, upper: compression part, lower: tension part; (b) cell wall deformation of quarter-swan specimen, upper: compression part, lower: tension part; (c) cell wall deformation of rift-swan specimen, upper: compression part, lower: tension part. The scale bar indicates 50 μm
 
-#### 3.4 Visualization of cell wall deformation evaluated by parameters
+#### 3.4 Visualization of the distribution of trachied cell wall deformation
+
+With the benefit of Grocker-
 
 The individual cell tracking algorithm performed well to extract thousands of common trachied cells existing at image sequence. After evaluating the intensity of the deformation. the 2d mapping was successfully built.
 
