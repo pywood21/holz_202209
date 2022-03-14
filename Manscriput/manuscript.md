@@ -136,17 +136,11 @@ Fig.7 Typical deformation of wood cell wall for three types of hinoki specimens 
 
 #### 3.4 Visualization of the distribution of trachied cell wall deformation
 
-With the benefit of Grocker-
+With the benefit of Grocker-Grier linking algorithm, the coordinates of centriods for each common tracheid cell existed at each frame were successfully linked. Therefore, thousands of common cells were extracted. Finally, After evaluating the intensity of the deformation. the 2d mapping was successfully built.
 
-The individual cell tracking algorithm performed well to extract thousands of common trachied cells existing at image sequence. After evaluating the intensity of the deformation. the 2d mapping was successfully built.
+Generally, at the elastic region, all specimens showed relative slight and varied deformation. 
 
-The Fig.X, Fig.X and Fig.X showed.....
-
-Generally, at the elastic region, all specimens showed slight and varied deformation. 
-
-When entering the plastic region, the cell wall deformation distribution differed.
-
-For flat-swan, the presence of the latewood to restrict the deformation in compression part. The area seems to be the most suitable parameters
+When entering the plastic region, the cell wall deformation distribution differed. For flat-swan, the presence of the latewood to restrict the deformation in compression part. The area seems to be the most suitable parameters. 
 
 For quarter-swan, the ray for quarter-swan to restrict the deformation, and induce the
 
@@ -236,5 +230,7 @@ was successfully built. The novel approach developed in this study showed the gr
 > 22. Garcia-Pedrero, A, García-Cervigón I A, Olano J M , García-Hidalgo M, Lillo-Saavedra M, Gonzalo-Martín C, Caetano C, Calderón-Ramírez S (2020) Convolutional neural networks for segmenting xylem vessels in stained cross-sectional images. Neural Comput Appl 32: 17927-17939
 
 > 23. Wolny A, Cerrone L, Vijayan A, Tofanelli R, Barro AV, Louveaux M, Wenzl C, Strauss S, Wilson-Sánchez D, Lymbouridou R, Steigleder S S, Pape C, Bailoni A, Duran-Nebreda S, Bassel GW, Lohman JU, Tsiantis M, Hamprecht FA, Scheitz K, Maizel A, Kreshuk A (2020) Accurate and versatile 3D segmentation of  plants tissues at cellular resolution, elife 29.
+
+> Li X, Lu Z, Yang Z, Yang C (2018) Anisotropic in-plane mechanical behavior of square honeycombs under off-axis loading. Mater Des 158: 88-97.
 
 ## 6. Acknowledgement
