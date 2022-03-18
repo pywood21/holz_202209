@@ -38,6 +38,8 @@ On the other hand, in the field of computer vision, the semantic segmentation ha
 
 Therefore, in this study, the semantic segmentation model has been built for the partitioning of anatomical features of hinoki wood, and their local deformation during the micro three-point bending test were precisely analyzed with the help of individual cell tracking algorithm.
 
+---
+
 ## 2. materials and method
 
 #### 2.1 specimen preparation
@@ -85,6 +87,8 @@ the n indicates the order of the observed image sequence. The i indicates the me
 <img title="" src="../Figures/05_parameters_measurment.png" alt="04_parameters_measurment.png" width="443">
 
 Fig.4 the measurement parameters to evaluate the intensity of deformation of cell wall
+
+---
 
 ## 3. results and discussion
 
@@ -174,11 +178,15 @@ Fig.11 The k-mean clustering results of deformation pattern and their relationsh
 
 Fig.12 The fracture of the flat-, quarter-, and rift- swan specimen taken after micro three-point bending test. The scale bar indicates 400 μm.
 
+---
+
 ## 4. Conclusion
 
 A  deep-learning based semantic segmentation approach (U-Net) was used to partition anatomical features in cross section of hinoki during the micro three-point bending test. With the help of Crocker-Grier linking algorithm, thousands of cells were successfully extracted. Then, several parameters (area, eccentricity, major/minor axis length, vertical/horizontal bounding box length) were used to evaluate the intensity of
 their deformation. Finally, 2D mapping of a deformation intensity distribution
 was successfully built. The novel approach developed in this study showed the great possibility for understanding the relationship between anatomical features and the mechanical behavior of wood.
+
+---
 
 ## 5. Reference
 
@@ -232,5 +240,7 @@ was successfully built. The novel approach developed in this study showed the gr
 > 23. Wolny A, Cerrone L, Vijayan A, Tofanelli R, Barro AV, Louveaux M, Wenzl C, Strauss S, Wilson-Sánchez D, Lymbouridou R, Steigleder S S, Pape C, Bailoni A, Duran-Nebreda S, Bassel GW, Lohman JU, Tsiantis M, Hamprecht FA, Scheitz K, Maizel A, Kreshuk A (2020) Accurate and versatile 3D segmentation of  plants tissues at cellular resolution, elife 29.
 
 > Li X, Lu Z, Yang Z, Yang C (2018) Anisotropic in-plane mechanical behavior of square honeycombs under off-axis loading. Mater Des 158: 88-97.
+
+---
 
 ## 6. Acknowledgement
