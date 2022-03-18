@@ -102,11 +102,11 @@ Those results agree with the previous study [5], which suggests the orientation 
 
 With the development of artificial intelligence, the fully convolutional networks (FCN) was proposed for conducting the semantic segmentation []. Furthermore, as an improvement of FCN, the U-Net architecture was proposed by Ronneberger et al.[] , which is designed to allow fewer training samples for model training. It is a U-shape architecture consisting of encoder blocks, decoder blocks and skip connections. It has became one of the most popular approaches for any semantic segmentation tasks. Recently, the U-net model has been applied for the segmentation of plant tissues[] and xylem vessels in stained cross-section of wood with excellent accuracy. Therefore, in this study, the U-Net has been selected for building model.
 
-The Fig.X (a) shows the evolution of binary cross entropy loss during 100 epochs training with U-Net architecture. After about 40 epochs training, the validation loss tended to became almost constant, while the loss continue to decreasing to about 0.1.  Four metrics were used for evaluating the trained model. The Table 1 showed the averaged value of those four metrics with the standard deviation. 
+The Fig.6 (a) shows the evolution of binary cross entropy loss during 100 epochs training with U-Net architecture. After about 40 epochs training, the validation loss tended to became almost constant, while the loss continue to decreasing to about 0.1.  Four metrics were used for evaluating the trained model. The Table 1 showed the averaged value of those four metrics with the standard deviation. 
 
-The Fig.X (b) shows a example of input original image and Fig.X (c) is the predicted image of original image through the trained model. The combination of patch blending algorithm [] and the model worked well to predict large image. The most of trachied cells seemed to be well segmented, while the partition of latewood trachied cells was not well predicted. It is known that the latewood trachied cell has quite small cell area and cell lumen makes it difficult to prepare the accurate masks from the image taken by the stereo microscope. To overcome the problem, the improvement of  image resolution will be needed by optimizing the methodology of microscopic observation. 
+The Fig.6 (b) shows a example of input original image and Fig.6 (c) is the predicted image of original image through the trained model. The combination of patch blending algorithm [] and the model worked well to predict large image. The most of trachied cells seemed to be well segmented, while the partition of latewood trachied cells was not well predicted. It is known that the latewood trachied cell has quite small cell area and cell lumen makes it difficult to prepare the accurate masks from the image taken by the stereo microscope. To overcome the problem, the improvement of  image resolution will be needed by optimizing the methodology of microscopic observation. 
 
-To further confirm the accuracy of the segmentation, the geometry parameters of a flat-swan specimen were measured. The vertical bounding box and horizontal bounding box were regraded as cell radial diameter and cell tangential diameter. The Fig.X showed the distribution of typical parameters measured from the segmented cells. The averaged cell area, cell eccentricity, cell radial diameter and cell tangential diameter were 955 *μ*m<sup>2</sup> (306), 0.596 (0.146), 37.5 *μ*m (7.63) and 34.8 *μ*m (6.62), respectively. Those measured geometry values agree with the previous research [] suggesting a accurate segmentation model has been built.
+To further confirm the accuracy of the segmentation, the geometry parameters of a flat-swan specimen were measured. The vertical bounding box and horizontal bounding box were regraded as cell radial diameter and cell tangential diameter. The Fig.7 showed the distribution of typical parameters measured from the segmented cells. The averaged cell area, cell eccentricity, cell radial diameter and cell tangential diameter were 955 *μ*m<sup>2</sup> (306), 0.596 (0.146), 37.5 *μ*m (7.63) and 34.8 *μ*m (6.62), respectively. Those measured geometry values agree with the previous research [] suggesting a accurate segmentation model has been built.
 
 Table. 1 the evaluated metrics for predicted images by trained U-Net model. The values in parentheses indicate the standard deviation.
 
@@ -118,13 +118,13 @@ Table. 1 the evaluated metrics for predicted images by trained U-Net model. The 
 
 Fig. 6 cell wall boundary prediction by trained U-net model. (a) binary cross entropy loss plotted against the training epochs; (b) input original image; (c) predicted image. The scale bar indicates length of 400 *μ*m.
 
-<img title="" src="../Figures/09_parameters_distribution.png" alt="08_parameters_distribution.png" data-align="inline">
+<img title="" src="../Figures/09_parameters_distribution.png" alt="08_parameters_distribution.png" data-align="inline" width="475">
 
-Fig.X the distribution of cell area (a), cell eccentricity (b), cell tangential diameter (c) and radial diameter measured from one specimen before.
+Fig.7 the distribution of cell area (a), cell eccentricity (b), cell tangential diameter (c) and radial diameter measured from one specimen before.
 
 #### 3.3 Typical deformation patterns of tracheid cell wall in three types of specimens
 
-The Fig.7 showed a typical deformation pattern of tracheid earlywood cell wall located at the compression part and tension part of three types of specimens. The changes in shape of single cell wall located at both compression part and tension part of specimen during the mechanical test were intermittently extracted. And our results agree with the previous study that use replica method to intermittently observe cell wall deformation of rift-swan specimen [].
+The Fig.8 showed a typical deformation pattern of tracheid earlywood cell wall located at the compression part and tension part of three types of specimens. The changes in shape of single cell wall located at both compression part and tension part of specimen during the mechanical test were intermittently extracted. And our results agree with the previous study that use replica method to intermittently observe cell wall deformation of rift-swan specimen [5].
 
 For flat-sawn specimen, a uniaxial compression and tension of tangential cell wall were possibly occurred at the compression and tension part of specimen, respectively. And because of the orthogonal orientation of cell wall in quarter-swan, the deformation of radial cell wall was observed. As quarter-swan was fractured when displacement reach to around only 1 mm, the dimensional changes of cell wall were relatively smaller than that of flat-swan. 
 
@@ -138,29 +138,25 @@ Fig.7 Typical deformation of wood cell wall for three types of hinoki specimens 
 
 With the benefit of Grocker-Grier linking algorithm, the coordinates of centriods for each common tracheid cell existed at each frame were successfully linked. Therefore, thousands of common cells were extracted. Finally, after evaluating the intensity of the deformation by described in the section of materials and method, the 2d mapping of the intensity of deformation for three types of specimen was successfully built.  At the elastic region, all specimens showed relative slight and varied deformation for all parameters. When entering the plastic region, the cell wall deformation distribution differed. And intensity of the deformation reaches the maximum before the fracture of the specimen. The suitable parameter for the evaluation of deformation for those types of specimen were also differed.
 
-For flat-swan, the area seems to be the most suitable parameter for the deformation evaluation. As shown in Fig.X, the area of cell increased in tension part and decreased in compression part of specimen. And the intensity the changes of compression part is smaller than that of tension part. It might due to the existence of the latewood at compression part contributing the restriction of deformation of cells. Both significant increase and decrease in eccentricity were observed in tension part of specimen. It is because such changes highly depends on original shape of the cell. In other words. the horizontal tension of wood cell wall induces both increase in eccentricity for circle-shape cell while it might induce the decrease in eccentricity for vertical ellipse-shaped cell. The similar result was also observed in the case of fitted ellipse aspect ratio. For the changes in bounding box aspect ratio,  the cells located at central part of specimen showed reasonable results. The increase and decrease in bounding box aspect ratio were observed in compression part and tension part, respectively. However, the bending test also caused the curve of the specimen that also change in the orientation of cell located at the surrounding part of the specimen and influence the reliability of their measured bounding box aspect ratio. 
+For flat-swan, the area seems to be the most suitable parameter for the deformation evaluation. As shown in Fig.8, the area of cell increased in tension part and decreased in compression part of specimen. And the intensity the changes of compression part is smaller than that of tension part. It might due to the existence of the latewood at compression part contributing the restriction of deformation of cells. Both significant increase and decrease in eccentricity were observed in tension part of specimen. It is because such changes highly depends on original shape of the cell. In other words. the horizontal tension of wood cell wall induces both increase in eccentricity for circle-shape cell while it might induce the decrease in eccentricity for vertical ellipse-shaped cell. The similar result was also observed in the case of fitted ellipse aspect ratio. For the changes in bounding box aspect ratio,  the cells located at central part of specimen showed reasonable results. The increase and decrease in bounding box aspect ratio were observed in compression part and tension part, respectively. However, the bending test also caused the curve of the specimen that also change in the orientation of cell located at the surrounding part of the specimen and influence the reliability of their measured bounding box aspect ratio. 
 
-For quarter-sawn specimen shown smallest plastic region in three types of specimen (Fig.X), the bounding box seems to be a promising parameter for the deformation evaluation. The changes in area varied even at the plastic region and before the fracture. The changes in the intensity of eccentricity and fitted ellipse aspect ratio increased for cell located at both compression and tension part.  In the case of bounding box aspect ratio,  as the specimen showed minor curve during the mechanical test, the compression induce the increase of the ratio and tension induce decrease of the ratio. And a neutral axis seems to be found at the almost center part of the specimen with the smallest changes in the ratio.
+For quarter-sawn specimen shown smallest plastic region in three types of specimen (Fig.9), the bounding box seems to be a promising parameter for the deformation evaluation. The changes in area varied even at the plastic region and before the fracture. The changes in the intensity of eccentricity and fitted ellipse aspect ratio increased for cell located at both compression and tension part.  In the case of bounding box aspect ratio,  as the specimen showed minor curve during the mechanical test, the compression induce the increase of the ratio and tension induce decrease of the ratio. And a neutral axis seems to be found at the almost center part of the specimen with the smallest changes in the ratio.
 
-For rift-swan specimen (Fig.X), the area, eccentricity, and fitted ellipse aspect ratio seem to be robust parameters for its deformation evaluation.  In comparison to flat- and quarter-sawn, the more concentrated and intensive deformation was observed at the innermost of the compression part and outermost of the tension part of rift-sawn. A decrease in area for both compression part of tension part were found, which is corresponding to the location of increase in eccentricity and fitted ellipse aspect ratio. As described at previous section, the shear formation of cell is the dominant deformation pattern. And such deformation is responsible for increase in eccentricity. Also, the major axis length increased and minor axis length decreased to have the increase in fitted ellipse aspect ratio. 
+For rift-swan specimen (Fig.10), the area, eccentricity, and fitted ellipse aspect ratio seem to be robust parameters for its deformation evaluation.  In comparison to flat- and quarter-sawn, the more concentrated and intensive deformation was observed at the innermost of the compression part and outermost of the tension part of rift-sawn. A decrease in area for both compression part of tension part were found, which is corresponding to the location of increase in eccentricity and fitted ellipse aspect ratio. As described at previous section, the shear formation of cell is the dominant deformation pattern. And such deformation is responsible for increase in eccentricity. Also, the major axis length increased and minor axis length decreased to have the increase in fitted ellipse aspect ratio. 
 
 
 
-![flat-sawn_map.png](../Figures/11_flat-sawn_map.png)
+<img src="../Figures/11_flat-sawn_map.png" title="" alt="flat-sawn_map.png" width="507">
 
-Fig. 8 Intensity of cell wall deformation of flat-sawn specimen during micro three-point bending test evaluated by.
+Fig. 8 Intensity of cell wall deformation of flat-sawn specimen during micro three-point bending test evaluated by four parameters.
 
-![quarter-sawn_map.png](../Figures/12_quarter-sawn_map.png)
+<img src="../Figures/12_quarter-sawn_map.png" title="" alt="quarter-sawn_map.png" width="506">
 
-Fig. 9 Intensity of cell wall deformation of quarter-sawn specimen during micro three-point bending test evaluated by.
+Fig. 9 Intensity of cell wall deformation of quarter-sawn specimen during micro three-point bending test evaluated by four parameters.
 
-![rift-sawn_map.png](../Figures/13_rift-sawn_map.png)
+<img src="../Figures/13_rift-sawn_map.png" title="" alt="rift-sawn_map.png" width="508">
 
-Fig. 10 Intensity of cell wall deformation of rift-sawn specimen during micro three-point bending test evaluated by.
-
-<img title="" src="../Figures/14_Fracture_pattern.png" alt="Fracture_pattern.png" width="257" data-align="center">
-
-Fig.X the fracture of the flat-, quarter-, and rift- swan specimen taken after micro three-point bending test. The scale bar indicates 400 $μ$m.
+Fig. 10 Intensity of cell wall deformation of rift-sawn specimen during micro three-point bending test evaluated by four parameters.
 
 #### 3.5 Relationship between changes in intensity of cell wall deformation and stress-strain curve
 
@@ -170,7 +166,13 @@ Therefore, the k-means clustering algorithm was applied to summarize the deforma
 
 ![kmeans_clustering_pattern.png](../Figures/15_kmeans_clustering_pattern.png)
 
-Fig.11
+Fig.11 The k-mean clustering results of deformation pattern and their relationship with strain and stress of specimen. (a) clustering results of changes in area for flat-sawn. (b) clustering results of changes in bounding box aspect ratio for quarter-sawn. (c) clustering results of changes in fitted ellipse aspect ration for rift-sawn.
+
+<img title="" src="../Figures/15_Fracture_pattern.png" alt="15_Fracture_pattern.png" data-align="inline" width="272">
+
+
+
+Fig.12 The fracture of the flat-, quarter-, and rift- swan specimen taken after micro three-point bending test. The scale bar indicates 400 μm.
 
 ## 4. Conclusion
 
