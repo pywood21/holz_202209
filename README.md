@@ -2,18 +2,16 @@
 
  Accurate and quantitative analysis of cell wall deformation by computer vision
 
-This repository is aim to submit current work to international journal (potential journal: Construction and building materials, Journal of materials science, Wood science and technology, Holzforschung).
+The final aim of this repository is to submit current work to international journal (potential journal: Construction and building materials, Journal of materials science, Wood science and technology, Holzforschung).
 
 ### Generation introduction of this repository:
 
 As a natural cellular material, wood has complex structure with
 different cell types (anatomical features) acting together to serve the needs
 of living tree. Those features have large variation with different wood
-species that highly influence the mechanical properties of wood [2]. To unveil
-the relationship between anatomical features and mechanical behavior of wood, the
-quantitative and accurate analysis of local deformation of anatomical features during
-the mechanical test is an important subject. However, due to its technical
-difficulty, only a few studies around this topic have been conducted.
+species that highly influence the mechanical properties of wood . 
+
+To unveil the relationship between anatomical features and mechanical behavior of wood, the quantitative and accurate analysis of local deformation of anatomical features during the mechanical test is an important subject. However, due to its technical difficulty, only a few studies around this topic have been conducted.
 
 On the other hand, with the development of computer vision in the
 field of artificial intelligence, the semantic segmentation has been proposed

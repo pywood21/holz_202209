@@ -6,7 +6,7 @@
 
 Authors: Shuoye Chen,  Junji Sugiyama
 
-Affiliations: Graduate School of Agriculture, Kyoto University, 
+Affiliations: Graduate School of Agriculture, Kyoto University, Kitashirakawa Oiwake-Cho, Sakyo-ku, Kyoto 606-8502, Japan
 
 E-mail: chenshuoye@gmail.com
 
@@ -168,7 +168,7 @@ For flat-sawn, the large increase of area of cell seems to occur at the central 
 
 For quarter-sawn, large increase and decrease of bounding box aspect ratio seems to occur at earlywood region near to the previous latewood region (Fig.11(b)). As the earlywood cell wall located at that region showed thinner cell wall thickness and large cell area resulting in weaker mechanical properties []. And we suppose it is the reason why the fracture of specimen induced by the detachment of the radial cell wall between cells easily occurred at the earlywood region of the tension part (Fig.12(b)). Furthermore, as the ray tissue of quarter-sawn was aligned against the mechanical load, it is possible that ray tissue plays an important role in the restriction of cell wall deformation resulting in the larger MOE and MOR than that of flat-swan.
 
-For rift-swan, the large shear deformation were concentrated along the radial files of the earlywood with the light blue and red color. Due to the orientation of the annual ring around 45 degree, the ray tissue has minor restriction of the cell walls. The shear deformation of cell wall firstly induced the detachment of the tangential wall between cells and then the detachment of the ray tissue ......
+For rift-swan, the large shear deformation were concentrated along the radial files of the earlywood with the light blue and red color. Due to the orientation of the annual ring around 44.5 degree, the ray tissue showed minor restriction for the cell walls. The shear deformation of cell wall firstly induced the detachment of the tangential wall between cells and then the detachment of the ray tissue ......
 
 For all specimens, the fracture has high possibility occurring at the tension part that showed large cell deformation. Therefore, by the further improvement of microscopic observation and increasing the test wood species, the novel method developed in this study might be adapted to the fractures prediction of the wood specimen.
 
