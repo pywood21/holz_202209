@@ -4,7 +4,7 @@
 
 ---
 
-Authors: Shuoye Chen, XXXX, Junji Sugiyama
+Authors: Shuoye Chen,  Junji Sugiyama
 
 Affiliations: Graduate School of Agriculture, Kyoto University, 
 
@@ -22,11 +22,11 @@ Flexural behavior, Cell wall deformation, Semantic segmentation, Individual cell
 
 ---
 
-## 1. introduction
+## 1. Introduction
 
-Wood is a natural cellular material, it has complex structure with different cell types (anatomical features) acting together to serve the needs of living tree [1]. Also, as an anisotropic material,  wood has excellent mechanical properties parallel to the grain ( longitudinal direction), while its mechanical properties perpendicular to the grain (transverse direction) are relatively weak [2] and varied among different wood species with relation to their unique anatomical features [1].
+Wood is a natural cellular material, and it has complex structure with different cell types (anatomical features) acting together to serve the needs of living tree [1]. Also, as an anisotropic material,  wood has excellent mechanical properties parallel to the grain ( longitudinal direction), while its mechanical properties perpendicular to the grain (transverse direction) are relatively weak [2] and varied among different wood species with relation to their unique anatomical features [1].
 
-From ancient time, human started to use wood as a construction materials for building civilization considering the microstructure of wood in transverse direction. For instance, a traditional roofing method called kokerabuki in Japanese.
+From ancient time, human started to use wood as a construction materials for building civilization considering the microstructure of wood in transverse direction. For instance, a traditional roofing method called kokerabuki in Japanese. 
 
 To completely unveil the relationship between anatomical features and mechanical behavior of wood, the quantitative and accurate analysis of local deformation of anatomical features during the mechanical test is an important subject. Up to now, wood scientists developed several approaches from two perspectives for understanding how anatomical features affect the mechanical behavior of wood in transverse direction.
 
@@ -40,7 +40,7 @@ Therefore, in this study, the semantic segmentation model has been built for the
 
 ---
 
-## 2. materials and method
+## 2. Materials and method
 
 #### 2.1 specimen preparation
 
@@ -90,7 +90,7 @@ Fig.4 the measurement parameters to evaluate the intensity of deformation of cel
 
 ---
 
-## 3. results and discussion
+## 3. Results and discussion
 
 #### 3.1 flexural behavior of flat-sawn, quarter-sawn and rift-sawn in transverse direction
 
@@ -132,7 +132,7 @@ The Fig.8 showed a typical deformation pattern of tracheid earlywood cell wall l
 
 For flat-sawn specimen, a uniaxial compression and tension of tangential cell wall were possibly occurred at the compression and tension part of specimen, respectively. And because of the orthogonal orientation of cell wall in quarter-swan, the deformation of radial cell wall was observed. As quarter-swan was fractured when displacement reach to around only 1 mm, the dimensional changes of cell wall were relatively smaller than that of flat-swan. 
 
-Different with flat- and quarter-sawn specimen, the cell wall in rift-sawn seemed to show a different deformation pattern.  The shear deformation of cell wall along the vertical and horizontal direction was observed at compression part and tension part, respectively. Furthermore, such orientation of tracheid cells was quite similar to the uniaxial loading of honeycombs in the in-plane off-axial direction. Li et al.[] have simulated the in-plane yield strengths of the square honeycombs in different direction under the compression by theoretical approach and FEM method. They have concluded the square honeycombs show a strong anisotropy when loaded in different orientations. And the numerical simulation indicates that the axial yield strength of the square honeycomb have minimum values at the angle of orientation with 37 degree to 38 degree, which corresponding to the orientation of annual ring for rift-swan. Therefore,  we suppose such shear deformation induced by the off-axis loading of trachied cell is responsible for the large displacement, relatively low MOE and MOR of rift-swan specimen.
+Different with flat- and quarter-sawn specimen, the cell wall in rift-sawn seemed to show a different deformation pattern.  The shear deformation of cell wall along the vertical and horizontal direction was observed at compression part and tension part, respectively. Furthermore, such orientation of tracheid cells was quite similar to the uniaxial loading of honeycombs in the in-plane off-axial direction. Li et al.[24] have simulated the in-plane yield strengths of the square honeycombs in different direction under the compression by theoretical approach and FEM method. They have concluded the square honeycombs show a strong anisotropy when loaded in different orientations. And the numerical simulation indicates that the axial yield strength of the square honeycomb have minimum values at the angle of orientation with 37 degree to 38 degree, which corresponding to the orientation of annual ring for rift-swan. Therefore,  we suppose such shear deformation induced by the off-axis loading of trachied cell is responsible for the large displacement, relatively low MOE and MOR of rift-swan specimen.
 
 <img title="" src="../Figures/10_partial_deformation.png" alt="partial_deformation.png" width="473" data-align="inline">
 
@@ -146,9 +146,7 @@ For flat-swan, the area seems to be the most suitable parameter for the deformat
 
 For quarter-sawn specimen shown smallest plastic region in three types of specimen (Fig.9), the bounding box seems to be a promising parameter for the deformation evaluation. The changes in area varied even at the plastic region and before the fracture. The changes in the intensity of eccentricity and fitted ellipse aspect ratio increased for cell located at both compression and tension part.  In the case of bounding box aspect ratio,  as the specimen showed minor curve during the mechanical test, the compression induce the increase of the ratio and tension induce decrease of the ratio. And a neutral axis seems to be found at the almost center part of the specimen with the smallest changes in the ratio.
 
-For rift-swan specimen (Fig.10), the area, eccentricity, and fitted ellipse aspect ratio seem to be robust parameters for its deformation evaluation.  In comparison to flat- and quarter-sawn, the more concentrated and intensive deformation was observed at the innermost of the compression part and outermost of the tension part of rift-sawn. A decrease in area for both compression part of tension part were found, which is corresponding to the location of increase in eccentricity and fitted ellipse aspect ratio. As described at previous section, the shear formation of cell is the dominant deformation pattern. And such deformation is responsible for increase in eccentricity. Also, the major axis length increased and minor axis length decreased to have the increase in fitted ellipse aspect ratio. 
-
-
+For rift-swan specimen (Fig.10), the area, eccentricity, and fitted ellipse aspect ratio seem to be robust parameters for its deformation evaluation.  In comparison to flat- and quarter-sawn, the more concentrated and intensive deformation was observed at the innermost of the compression part and outermost of the tension part of rift-sawn. A decrease in area for both compression part and tension part were found, which is corresponding to the region of increase in eccentricity and fitted ellipse aspect ratio. As described at previous section, the shear formation of cell is the dominant deformation pattern. And such deformation is responsible for increase in eccentricity. Also, the major axis length increased and minor axis length decreased to have the increase in fitted ellipse aspect ratio.  Same as the case of flat-sawn, rotation of the cell changes the orientation of cells to have unreliable results for the cell deformation.
 
 <img src="../Figures/11_flat-sawn_map.png" title="" alt="flat-sawn_map.png" width="507">
 
@@ -164,19 +162,23 @@ Fig. 10 Intensity of cell wall deformation of rift-sawn specimen during micro th
 
 #### 3.5 Relationship between changes in intensity of cell wall deformation and stress-strain curve
 
-As desribed above, the changes in area, changes in bounding box aspect ratio , and change in fitted ellipse aspect ratio have been concluded as suitable parameters discussing the deformation of cell for flat-sawn, quarter-sawn and rift-sawn, respectively. 
+After choosing the suitable parameter for the deformation evaluation, the changes in area, bounding box aspect ratio , and fitted ellipse aspect ratio were selected for discussing the deformation of cell for flat-sawn, quarter-sawn and rift-sawn, respectively. The k-means clustering algorithm was then applied to summarize the deformation pattern. And their relationship between strain and stress of the specimen were showed at Fig.11. And the Fig.12 showed the detailed fracture pattern of the three types of specimen. 
 
-Therefore, the k-means clustering algorithm was applied to summarize the deformation pattern. And their relationship between strain and stress of the specimen were showed at Fig.11.
+For flat-sawn, the large increase of area of cell seems to occur at the central tension part with orange, pink and red color, which is corresponding to the region of fracture started at tension part of the specimen (Fig.11(a)). And the detachment of the tangential cell wall between the cells is the reason for the fracture (Fig.12 (a)). 
 
-![kmeans_clustering_pattern.png](../Figures/15_kmeans_clustering_pattern.png)
+For quarter-sawn, large increase and decrease of bounding box aspect ratio seems to occur at earlywood region near to the previous latewood region (Fig.11(b)). As the earlywood cell wall located at that region showed thinner cell wall thickness and large cell area resulting in weaker mechanical properties []. And we suppose it is the reason why the fracture of specimen induced by the detachment of the radial cell wall between cells easily occurred at the earlywood region of the tension part (Fig.12(b)). Furthermore, as the ray tissue of quarter-sawn was aligned against the mechanical load, it is possible that ray tissue plays an important role in the restriction of cell wall deformation resulting in the larger MOE and MOR than that of flat-swan.
+
+For rift-swan, the large shear deformation were concentrated along the radial files of the earlywood with the light blue and red color. Due to the orientation of the annual ring around 45 degree, the ray tissue has minor restriction of the cell walls. The shear deformation of cell wall firstly induced the detachment of the tangential wall between cells and then the detachment of the ray tissue ......
+
+For all specimens, the fracture has high possibility occurring at the tension part that showed large cell deformation. Therefore, by the further improvement of microscopic observation and increasing the test wood species, the novel method developed in this study might be adapted to the fractures prediction of the wood specimen.
+
+![kmeans_clustering_pattern.png](../Figures/14_kmeans_clustering_pattern.png)
 
 Fig.11 The k-mean clustering results of deformation pattern and their relationship with strain and stress of specimen. (a) clustering results of changes in area for flat-sawn. (b) clustering results of changes in bounding box aspect ratio for quarter-sawn. (c) clustering results of changes in fitted ellipse aspect ration for rift-sawn.
 
 <img title="" src="../Figures/15_Fracture_pattern.png" alt="15_Fracture_pattern.png" data-align="inline" width="272">
 
-
-
-Fig.12 The fracture of the flat-, quarter-, and rift- swan specimen taken after micro three-point bending test. The scale bar indicates 400 μm.
+Fig.12 The fracture of the flat-, quarter-, and rift- swan specimen after micro three-point bending test. The scale bar indicates 400 μm.
 
 ---
 
@@ -184,7 +186,9 @@ Fig.12 The fracture of the flat-, quarter-, and rift- swan specimen taken after 
 
 A  deep-learning based semantic segmentation approach (U-Net) was used to partition anatomical features in cross section of hinoki during the micro three-point bending test. With the help of Crocker-Grier linking algorithm, thousands of cells were successfully extracted. Then, several parameters (area, eccentricity, major/minor axis length, vertical/horizontal bounding box length) were used to evaluate the intensity of
 their deformation. Finally, 2D mapping of a deformation intensity distribution
-was successfully built. The novel approach developed in this study showed the great possibility for understanding the relationship between anatomical features and the mechanical behavior of wood.
+was successfully built. 
+
+The novel approach developed in this study showed the great possibility for understanding the relationship between anatomical features and the mechanical behavior of wood.
 
 ---
 
@@ -239,7 +243,11 @@ was successfully built. The novel approach developed in this study showed the gr
 
 > 23. Wolny A, Cerrone L, Vijayan A, Tofanelli R, Barro AV, Louveaux M, Wenzl C, Strauss S, Wilson-Sánchez D, Lymbouridou R, Steigleder S S, Pape C, Bailoni A, Duran-Nebreda S, Bassel GW, Lohman JU, Tsiantis M, Hamprecht FA, Scheitz K, Maizel A, Kreshuk A (2020) Accurate and versatile 3D segmentation of  plants tissues at cellular resolution, elife 29.
 
-> Li X, Lu Z, Yang Z, Yang C (2018) Anisotropic in-plane mechanical behavior of square honeycombs under off-axis loading. Mater Des 158: 88-97.
+> 24. Li X, Lu Z, Yang Z, Yang C (2018) Anisotropic in-plane mechanical behavior of square honeycombs under off-axis loading. Mater Des 158: 88-97.
+
+> 25. Long J, Shelhamer E, Darrell T (2015) Fully convolutional networks for semantic segmentation, in 2015 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), Boston, MA, USA, 2015 pp. 3431-3440.
+
+> 26. Saiki H (1963) Studies on annual ring structure of coniferous wood II Demarcation between earlywood and latewood (in Japanese). Mokuzai Gakkaishi 9: 231-236.
 
 ---
 
