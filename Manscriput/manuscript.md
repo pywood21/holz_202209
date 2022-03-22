@@ -14,7 +14,7 @@ E-mail: chenshuoye@gmail.com
 
 ## Abstract
 
-A deep-learning based semantic segmentation approach (U-Net) was used to partition anatomical features in cross section of hinoki during micro three-point bending test. With the help of Crocker-Grier linking algorithm, thousands of cells were successfully extracted. Then, several parameters (area, eccentricity, major/minor axis length, vertical/horizontal bounding box length) were used to evaluate the intensity of their deformation. Finally, 2D mapping of a deformation intensity distribution was successfully built. The novel approach developed in this study showed the great possibility for understanding the relationship between anatomical features and mechanical behavior of wood.
+A deep-learning based semantic segmentation approach (U-Net) was used to partition anatomical features in cross section of hinoki during micro three-point bending test. With the help of Crocker-Grier linking algorithm, thousands of cells were successfully extracted. Then, several parameters (area, eccentricity, major/minor axis length, vertical/horizontal bounding box length) were used to evaluate the intensity of their deformation. Finally, 2D mapping of a deformation intensity distribution was successfully built. By analyzing the cell deformation of flat-, quarter-sawn and rift-sawn, we have have confirmed the orientation of annual ring affect the flexural behavior of wood in transverse direction. The quarter-swan showed the largest MOE and MOR. The ray tissue aligned against the loading might play an important role in the restriction of the cell wall deformation. The rift-sawn specimen showed smallest MOE and MOR and its reason might be the loading of specimen in the in-plane off-axial direction, which induces the shear deformation of the cell wall. For all three types of specimens, the fracture has high possibility occurring at the tension part that showed large cell deformation. Therefore, the novel method developed in this study might be adapted to the fractures prediction of the wood specimen. Furthermore, with varying the test wood species such approach provides a great possibility to unveil the relationship between anatomical features and mechanical behavior of wood in transverse direction.
 
 ## Keywords:
 
@@ -132,7 +132,7 @@ The Fig.8 showed a typical deformation pattern of tracheid earlywood cell wall l
 
 For flat-sawn specimen, a uniaxial compression and tension of tangential cell wall were possibly occurred at the compression and tension part of specimen, respectively. And because of the orthogonal orientation of cell wall in quarter-swan, the deformation of radial cell wall was observed. As quarter-swan was fractured when displacement reach to around only 1 mm, the dimensional changes of cell wall were relatively smaller than that of flat-swan. 
 
-Different with flat- and quarter-sawn specimen, the cell wall in rift-sawn seemed to show a different deformation pattern.  The shear deformation of cell wall along the vertical and horizontal direction was observed at compression part and tension part, respectively. Furthermore, such orientation of tracheid cells was quite similar to the uniaxial loading of honeycombs in the in-plane off-axial direction. Li et al.[24] have simulated the in-plane yield strengths of the square honeycombs in different direction under the compression by theoretical approach and FEM method. They have concluded the square honeycombs show a strong anisotropy when loaded in different orientations. And the numerical simulation indicates that the axial yield strength of the square honeycomb have minimum values at the angle of orientation with 37 degree to 38 degree, which corresponding to the orientation of annual ring for rift-swan. Therefore,  we suppose such shear deformation induced by the off-axis loading of trachied cell is responsible for the large displacement, relatively low MOE and MOR of rift-swan specimen.
+Different with flat- and quarter-sawn specimen, the cell wall in rift-sawn seemed to show a different deformation pattern.  The shear deformation of cell wall along the vertical and horizontal direction was observed at compression part and tension part, respectively. Furthermore, such orientation of tracheid cells was quite similar to the uniaxial loading of honeycombs in the in-plane off-axial direction. Li et al.[24] have simulated the in-plane yield strengths of the square honeycombs in different direction under the compression by theoretical approach and FEM method. They have concluded the square honeycombs show a strong anisotropy when loaded in different orientations. And the numerical simulation indicates that the axial yield strength of the square honeycomb have minimum values at the angle of orientation with 37 degree to 38 degree, which is in the range of the orientation of annual ring for rift-swan. Therefore,  we suppose such shear deformation induced by the off-axis loading of trachied cell is responsible for the large displacement, relatively low MOE and MOR of rift-swan specimen.
 
 <img title="" src="../Figures/10_partial_deformation.png" alt="partial_deformation.png" width="473" data-align="inline">
 
@@ -162,15 +162,17 @@ Fig. 10 Intensity of cell wall deformation of rift-sawn specimen during micro th
 
 #### 3.5 Relationship between changes in intensity of cell wall deformation and stress-strain curve
 
-After choosing the suitable parameter for the deformation evaluation, the changes in area, bounding box aspect ratio , and fitted ellipse aspect ratio were selected for discussing the deformation of cell for flat-sawn, quarter-sawn and rift-sawn, respectively. The k-means clustering algorithm was then applied to summarize the deformation pattern. And their relationship between strain and stress of the specimen were showed at Fig.11. And the Fig.12 showed the detailed fracture pattern of the three types of specimen. 
+After choosing the suitable parameter for the deformation evaluation, the changes in area, bounding box aspect ratio , and fitted ellipse aspect ratio were selected for discussing the deformation of cell for flat-sawn, quarter-sawn and rift-sawn, respectively. The k-means clustering algorithm was then applied to summarize the deformation pattern. And their relationship between strain and stress of the specimen were showed at Fig.11. And the Fig.12 showed the detailed fracture pattern of the three types of specimen. For all specimens, the fracture has high possibility occurring at the tension part that showed large cell deformation. Therefore, by the further improvement of microscopic observation and increasing the test wood species, the novel method developed in this study might be adapted to the fractures prediction of the wood specimen.
 
-For flat-sawn, the large increase of area of cell seems to occur at the central tension part with orange, pink and red color, which is corresponding to the region of fracture started at tension part of the specimen (Fig.11(a)). And the detachment of the tangential cell wall between the cells is the reason for the fracture (Fig.12 (a)). 
+For flat-sawn, the large increase of area of cell occurred at the central tension part with orange, pink and red color, which is corresponding to the region of fracture started at tension part of the specimen (Fig.11(a)). And the detachment of the tangential cell wall between the cells is the reason for the fracture (Fig.12 (a)). 
 
-For quarter-sawn, large increase and decrease of bounding box aspect ratio seems to occur at earlywood region near to the previous latewood region (Fig.11(b)). As the earlywood cell wall located at that region showed thinner cell wall thickness and large cell area resulting in weaker mechanical properties []. And we suppose it is the reason why the fracture of specimen induced by the detachment of the radial cell wall between cells easily occurred at the earlywood region of the tension part (Fig.12(b)). Furthermore, as the ray tissue of quarter-sawn was aligned against the mechanical load, it is possible that ray tissue plays an important role in the restriction of cell wall deformation resulting in the larger MOE and MOR than that of flat-swan.
+For quarter-sawn, large increase and decrease of bounding box aspect ratio occurred at earlywood region near to the previous latewood region (Fig.11(b)). As the earlywood cell wall located at that region showed thinner cell wall thickness and large cell area resulting in weaker mechanical properties []. And we suppose it is the reason why the fracture of specimen induced by the detachment of the radial cell wall between cells started to occur at the earlywood region of the tension part (Fig.12(b)). Furthermore, as the ray tissue of quarter-sawn was aligned against the mechanical load, it is possible that ray tissue plays an important role in the restriction of cell wall deformation resulting in the larger MOE and MOR than that of flat-swan.
 
-For rift-swan, the large shear deformation were concentrated along the radial files of the earlywood with the light blue and red color. Due to the orientation of the annual ring around 44.5 degree, the ray tissue showed minor restriction for the cell walls. The shear deformation of cell wall firstly induced the detachment of the tangential wall between cells and then the detachment of the ray tissue ......
+For rift-swan, the large shear deformation were concentrated along the radial files of the earlywood with the light blue and red color (Fig.11 (c)). Due to the orientation of the annual ring around 44.5 degree, the ray tissue seems to have minor restriction for the cell walls. And the detachment of tangential cell wall between cells along the radial direction dominated the fracture pattern of the specimen (Fig.12 (c)).
 
-For all specimens, the fracture has high possibility occurring at the tension part that showed large cell deformation. Therefore, by the further improvement of microscopic observation and increasing the test wood species, the novel method developed in this study might be adapted to the fractures prediction of the wood specimen.
+Discussion for relationship between changes in parameters and stress-strain.
+
+
 
 ![kmeans_clustering_pattern.png](../Figures/14_kmeans_clustering_pattern.png)
 
@@ -184,11 +186,15 @@ Fig.12 The fracture of the flat-, quarter-, and rift- swan specimen after micro 
 
 ## 4. Conclusion
 
-A  deep-learning based semantic segmentation approach (U-Net) was used to partition anatomical features in cross section of hinoki during the micro three-point bending test. With the help of Crocker-Grier linking algorithm, thousands of cells were successfully extracted. Then, several parameters (area, eccentricity, major/minor axis length, vertical/horizontal bounding box length) were used to evaluate the intensity of
-their deformation. Finally, 2D mapping of a deformation intensity distribution
-was successfully built. 
+In this study,  a  deep-learning based semantic segmentation approach with U-Net architecture was used to partition anatomical features in cross section of hinoki during the micro three-point bending test. With the help of Crocker-Grier linking algorithm, thousands of cells were successfully extracted. Then, several parameters (area, eccentricity, major/minor axis length, vertical/horizontal bounding box length) were used to evaluate the intensity of their deformation. Finally, 2D mapping of a deformation intensity distribution was successfully built. And the main conclusions for analyzing the flat-sawn, quarter-sawn and rift-sawn specimens are as follow:
 
-The novel approach developed in this study showed the great possibility for understanding the relationship between anatomical features and the mechanical behavior of wood.
+1. The area and bounding box aspect ratio were suitable for evaluating the cell wall deformation of flat-sawn and quarter-sawn specimen, respectively. As a relative large cell deformation induced for the rift-sawn specimen, the area, eccentricity and fitted ellipsed aspect ratio are robust parameters for the cell wall deformation evaluation.
+
+2. The quarter-swan showed the largest MOE and MOR. The ray tissue aligned against the loading might play an important role in the restriction of the cell wall deformation.
+
+3. The rift-sawn specimen showed smallest MOE and MOR and its reason might be the loading of specimen in the in-plane off-axial direction, which induces the shear deformation of the cell wall.
+
+4. For all three types of specimens, the fracture has high possibility occurring at the tension part that showed large cell deformation. Therefore, the novel method developed in this study might be adapted to the fractures prediction of the wood specimen
 
 ---
 
@@ -211,8 +217,6 @@ The novel approach developed in this study showed the great possibility for unde
 > 8. Watanabe U,  Fujita M,  Norimoto M (2002) Transverse Young’s moduli and cell shapes in coniferous early wood. Holzforschung 56: 1–6.
 
 > 9. Ando K and Onda H (1999) Mechanism for deformation of wood as a honeycomb structure II: First buckling mechanism of cell walls under radial compression using the generalized cell model. J Wood Sci 45:250-253.
-
-> Gibson LJ (2012)  The hierarchical structure and mechanics of plant materials. J R Soc Interface 9: 2749-2766.
 
 > 10. Holmberg S, Persson K, Petersson H (1999) Nonlinear mechanical behaviour and analysis of wood and fibre materials. Comput Struct 72: 459-480.
 
@@ -249,6 +253,10 @@ The novel approach developed in this study showed the great possibility for unde
 
 > 26. Saiki H (1963) Studies on annual ring structure of coniferous wood II Demarcation between earlywood and latewood (in Japanese). Mokuzai Gakkaishi 9: 231-236.
 
+> Gibson LJ (2012) The hierarchical structure and mechanics of plant materials. J R Soc Interface 9: 2749-2766.
+
 ---
 
-## 6. Acknowledgement
+## 6. Funding
+
+This work was supported by JSPS KAKEN Grant Number 18H05485.
