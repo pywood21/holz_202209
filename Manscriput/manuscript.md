@@ -172,11 +172,11 @@ For rift-swan, the large shear deformation were concentrated along the radial fi
 
 Discussion for relationship between changes in parameters and stress-strain.
 
+![14_kmeans_clustering_pattern.png](../Figures/14_kmeans_clustering_pattern.png)
 
 
-![kmeans_clustering_pattern.png](../Figures/14_kmeans_clustering_pattern.png)
 
-Fig.11 The k-mean clustering results of deformation pattern and their relationship with strain and stress of specimen. (a) clustering results of changes in area for flat-sawn. (b) clustering results of changes in bounding box aspect ratio for quarter-sawn. (c) clustering results of changes in fitted ellipse aspect ration for rift-sawn.
+Fig.11 The k-mean clustering results of deformation pattern and their relationship with strain and stress of specimen. (a) clustering results of changes in area for flat-sawn. (b) clustering results of changes in bounding box aspect ratio for quarter-sawn. (c) clustering results of changes in fitted ellipse aspect ration for rift-sawn. 
 
 <img title="" src="../Figures/15_Fracture_pattern.png" alt="15_Fracture_pattern.png" data-align="inline" width="272">
 
