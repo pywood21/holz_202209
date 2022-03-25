@@ -162,7 +162,7 @@ Fig. 10 Intensity of cell wall deformation of rift-sawn specimen during micro th
 
 #### 3.5 Clustering analysis of deformation pattern of individual cell and its relationship with stress-strain curve
 
-After choosing the suitable parameter for the deformation evaluation, the changes in area, bounding box aspect ratio , and fitted ellipse aspect ratio were selected for discussing the deformation of cell for flat-sawn, quarter-sawn and rift-sawn, respectively. The k-means clustering algorithm was then applied to summarize the deformation pattern. And their relationship between strain and stress of the specimen were showed at Fig.11. And the Fig.12 showed the detailed fracture pattern of the three types of specimen. For all specimens, the fracture has high possibility occurring at the tension part that showed large cell deformation. Therefore, by the further improvement of microscopic observation and increasing the test wood species, the novel method developed in this study might be adapted to the fractures prediction of the wood specimen.
+After choosing the suitable parameter for the deformation evaluation, the changes in area, bounding box aspect ratio , and fitted ellipse aspect ratio were selected for discussing the deformation of cell for flat-sawn, quarter-sawn and rift-sawn, respectively. The k-means clustering algorithm implemented by Python package: scikit-learn [29] was then applied to summarize the deformation pattern. And their relationship between strain and stress of the specimen were showed at Fig.11. And the Fig.12 showed the detailed fracture pattern of the three types of specimen. For all specimens, the fracture has high possibility occurring at the tension part that showed large cell deformation. Therefore, by the further improvement of microscopic observation and increasing the test wood species, the novel method developed in this study might be adapted to the fractures prediction of the wood specimen.
 
 For flat-sawn, the large increase of area of cell occurred at the central tension part with orange, pink and red color, which is corresponding to the region of fracture started at tension part of the specimen (Fig.11(a)). And the detachment of the tangential cell wall between the cells is the reason for the fracture (Fig.12 (a)). 
 
@@ -254,6 +254,8 @@ In this study,  a  deep-learning based semantic segmentation approach with U-Net
 > 27. Saiki H (1963) Studies on annual ring structure of coniferous wood II Demarcation between earlywood and latewood (in Japanese). Mokuzai Gakkaishi 9: 231-236.
 
 > 28. X. Li, Z. Lu, Z. Yang, C. Yang, Anisotropic in-plane mechanical behavior of square honeycombs under off-axis loading. Mater. Des. 158 (2018) 88-97. https://doi.org/10.1016/j.matdes.2018.08.007 
+
+> 29. F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Prettenhofer, R. Weiss, V. Dubourg, J. Vanderplas,  A. Passos, D. Cournapeau, M. Brucher, M. Perrot, E. Duchesnay, Scikit-learn: machine learning in python,  J. Mach. Learn. Res. 12 (2011) 2825-2830. https://dl.acm.org/doi/10.5555/1953048.2078195
 
 > Gibson LJ (2012) The hierarchical structure and mechanics of plant materials. J R Soc Interface 9: 2749-2766.
 
