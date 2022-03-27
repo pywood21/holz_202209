@@ -38,7 +38,7 @@ Therefore, in this study, the semantic segmentation model has been built for the
 
 ---
 
-## 2. Materials and method
+## 2. Materials and methods
 
 #### 2.1 specimen preparation
 
