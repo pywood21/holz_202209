@@ -174,7 +174,7 @@ Discussion for relationship between changes in parameters and stress-strain.
 
 ![14_kmeans_clustering_pattern.png](../Figures/14_kmeans_clustering_pattern.png)
 
-Fig.11 The k-mean clustering results of deformation pattern and their relationship with strain and stress of specimen. (a) clustering results of changes in area for flat-sawn. (b) clustering results of changes in bounding box aspect ratio for quarter-sawn. (c) clustering results of changes in fitted ellipse aspect ration for rift-sawn. 
+Fig.11 The k-mean clustering results of deformation pattern and their relationship with strain and stress of specimen. (a) clustering results of changes in area for flat-sawn. (b) clustering results of changes in bounding box aspect ratio for quarter-sawn. (c) clustering results of changes in fitted ellipse aspect ration for rift-sawn.
 
 <img title="" src="../Figures/15_Fracture_pattern.png" alt="15_Fracture_pattern.png" data-align="inline" width="272">
 
@@ -225,7 +225,7 @@ In this study,  a  deep-learning based semantic segmentation approach with U-Net
 > 13. W. Zhong, Z. Zhang, X. Chen, Q. Wei, G. Chen, X. Huang, Multi-scale finite element simulation on large deformation behavior of wood under axial and transverse compression conditions. Acta Mech. Sin. 37 (2021) 1136-1151. https://doi.org/10.1007/s10409-021-01112-z
 
 > 14. O. Ronneberger, P. Fischer, T. Brox, U-Net: convolutional networks for
->     biomedical image segmentation, Lect. Notes Comput. Sci. (including Subser Lect Notes Artif Intell Lect Notes Bioinformatics) 9351 (2015) 234–241. 
+>     biomedical image segmentation, Lect. Notes Comput. Sci. (including Subser Lect Notes Artif Intell Lect Notes Bioinformatics) 9351 (2015) 234–241. https://doi.org/10.1007/978-3-319-24574-4_28 
 
 > 15. A. Chaurasia, E. Culurciello, LinkNet: Exploiting encoder representations for efficient semantic segmentation, 2017 IEEE Visual Communications and Image Processing (VCIP) (2017) 1–4. https://doi.org/10.1109/VCIP.2017.8305148
 
