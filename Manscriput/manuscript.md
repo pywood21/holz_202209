@@ -84,7 +84,7 @@ Finally, after the tracking of individual cells existing at every image sequence
 
 the n indicates the order of the observed image sequence. The i indicates the measured parameters showed on Fig.4.
 
-<img title="" src="../Figures/05_parameters_measurment.png" alt="04_parameters_measurment.png" width="443">
+<img title="" src="../Figures/05_parameters_measurment.png" alt="04_parameters_measurment.png" width="638">
 
 Fig.4 the measurement parameters to evaluate the intensity of deformation of cell wall
 
@@ -94,7 +94,7 @@ Fig.4 the measurement parameters to evaluate the intensity of deformation of cel
 
 #### 3.1 flexural behavior of flat-sawn, quarter-sawn and rift-sawn in transverse direction
 
-<img title="" src="../Figures/07_Hinoki_dis_MOE.png" alt="06_Hinoki_dis_MOE.png" width="460">
+<img title="" src="../Figures/07_Hinoki_dis_MOE.png" alt="06_Hinoki_dis_MOE.png" width="628">
 
 Fig.5 mechanical properties of flat-swan, quarter-swan and rift-swan of hinoki specimens in transverse direction. (a) load and displacement of three types of hinoki specimens during micro three-point test. (b) MOE (modulus of elasticity) and MOR (modulus of rupture) of three types of hinoki specimen; the error bars indicate the standard deviation.
 
@@ -118,11 +118,11 @@ Table. 1 the evaluated metrics for predicted images by trained U-Net model. The 
 |:------------:|:------------:|:------------:|:------------:|
 | 0.82 (0.019) | 0.82 (0.017) | 0.82 (0.017) | 0.92 (0.006) |
 
-<img title="" src="../Figures/08_large_img_predicted.png" alt="large_img_predicted.png" width="475">
+<img title="" src="../Figures/08_large_img_predicted.png" alt="large_img_predicted.png" width="624">
 
 Fig. 6 cell wall boundary prediction by trained U-net model. (a) binary cross entropy loss plotted against the training epochs; (b) input original image; (c) predicted image. The scale bar indicates length of 400 *μ*m.
 
-<img title="" src="../Figures/09_parameters_distribution.png" alt="08_parameters_distribution.png" data-align="inline" width="475">
+<img title="" src="../Figures/09_parameters_distribution.png" alt="08_parameters_distribution.png" data-align="inline" width="637">
 
 Fig.7 the distribution of cell area (a), cell eccentricity (b), cell tangential diameter (c) and radial diameter measured from one specimen before.
 
@@ -148,15 +148,15 @@ For quarter-sawn specimen shown smallest plastic region in three types of specim
 
 For rift-swan specimen (Fig.10), the area, eccentricity, and fitted ellipse aspect ratio seem to be robust parameters for its deformation evaluation.  In comparison to flat- and quarter-sawn, the more concentrated and intensive deformation was observed at the innermost of the compression part and outermost of the tension part of rift-sawn. A decrease in area for both compression part and tension part were found, which is corresponding to the region of increase in eccentricity and fitted ellipse aspect ratio. As described at previous section, the shear formation of cell is the dominant deformation pattern. And such deformation is responsible for increase in eccentricity. Also, the major axis length increased and minor axis length decreased to have the increase in fitted ellipse aspect ratio.  Same as the case of flat-sawn, rotation of the cell changes the orientation of cells to have unreliable results for the cell deformation.
 
-<img src="../Figures/11_flat-sawn_map.png" title="" alt="flat-sawn_map.png" width="507">
+<img title="" src="../Figures/11_flat-sawn_map.png" alt="flat-sawn_map.png" width="639">
 
 Fig. 8 Intensity of cell wall deformation of flat-sawn specimen during micro three-point bending test evaluated by four parameters.
 
-<img src="../Figures/12_quarter-sawn_map.png" title="" alt="quarter-sawn_map.png" width="506">
+<img title="" src="../Figures/12_quarter-sawn_map.png" alt="quarter-sawn_map.png" width="638">
 
 Fig. 9 Intensity of cell wall deformation of quarter-sawn specimen during micro three-point bending test evaluated by four parameters.
 
-<img src="../Figures/13_rift-sawn_map.png" title="" alt="rift-sawn_map.png" width="508">
+<img title="" src="../Figures/13_rift-sawn_map.png" alt="rift-sawn_map.png" width="639">
 
 Fig. 10 Intensity of cell wall deformation of rift-sawn specimen during micro three-point bending test evaluated by four parameters.
 
