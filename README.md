@@ -2,7 +2,9 @@
 
  Accurate and quantitative analysis of cell wall deformation by computer vision
 
-The final aim of this repository is to submit current work to international journal (potential journal: Construction and building materials, Journal of materials science, Wood science and technology, Holzforschung).
+The final aim of this repository is to submit current work to international journal: Construction and building materials.
+
+
 
 ### Generation introduction of this repository:
 
@@ -21,7 +23,18 @@ wood science, it provides a possibility to simultaneously analyze almost all
 local changes in anatomical features and their interaction during the mechanical
 test.
 
-Therefore, as a preliminary try in this study, the semantic
+Therefore, as a first try in this study, the semantic
 segmentation model has been built to conduct partition of anatomical
 features, and their local deformation during the micro three-point bending test
 were precisely analyzed.
+
+### What is in this repository ?
+
+The repository contains the necessary codes that used for analyzing the intensity of cell wall deformation of wood specimen during micro three-point bending test. They are two jupyter notebooks:
+
+```
+1. cell_wall_deformation_analysis.ipynb
+2. kmeans_clustering.ipynb
+```
+
+The first one is for the geometry parameters extraction and calculation of deformation intensity. The second is the procedure for performing k-means clustering of deformation patterns and their relationship with stress-strain curve.
