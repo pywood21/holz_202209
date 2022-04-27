@@ -1,10 +1,6 @@
-# Tracking_cell_wall_deformation
-
- Accurate and quantitative analysis of cell wall deformation by computer vision
+# Flexural behavior of wood in transverse direction investigated using novel computer vision and machine learning approach
 
 The final aim of this repository is to submit current work to international journal: Construction and building materials.
-
-
 
 ### Generation introduction of this repository:
 
