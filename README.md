@@ -1,6 +1,8 @@
 # Flexural behavior of wood in transverse direction investigated using novel computer vision and machine learning approach
 
-The final aim of this repository is to submit current work to international journal: Construction and building materials.
+2022.4.28 to 2022.05.20: The previous aim of this repository is to submit current work to international journal: Construction and building materials (As the study was outside of the scope to the target journal, the target journal was changed).
+
+2022.5.20 to : 
 
 ### Generation introduction of this repository:
 
