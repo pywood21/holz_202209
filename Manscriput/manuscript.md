@@ -1,20 +1,19 @@
 # Title:
 
-# Flexural behavior of wood in transverse direction studied by computer vision and machine learning
+# 
 
----
+# **Flexural behavior of wood in transverse direction investigated using novel computer vision and machine learning approach**
 
-Authors: Shuoye Chen,  Junji Sugiyama
+Authors: Shuoye Chen<sup>1*</sup>,  Tatsuya Awano<sup>1</sup>, Arata Yoshinaga<sup>1</sup>, Junji Sugiyama<sup>1*</sup>
 
-Affiliations: Graduate School of Agriculture, Kyoto University, Kitashirakawa Oiwake-Cho, Sakyo-ku, Kyoto 606-8502, Japan
-
-E-mail: chenshuoye@gmail.com
+Affiliations: 1. Graduate School of Agriculture, Kyoto University, Kitashirakawa Oiwake-Cho, Sakyo-ku, Kyoto 606-8502, Japan.
 
 ---
 
 ## Abstract
 
-A deep-learning based semantic segmentation approach (U-Net) was used to partition anatomical features in cross section of hinoki (*Chamaecyparis obtusa*) during micro three-point bending test. With the help of Crocker-Grier linking algorithm, thousands of cells were successfully extracted. Then, several parameters (area, eccentricity, major/minor axis length, vertical/horizontal bounding box length) were used to evaluate the intensity of their deformation. Finally, 2D mapping of a deformation intensity distribution was successfully built. By analyzing the cell deformation of flat-, quarter-sawn and rift-sawn, we have confirmed the orientation of annual ring affect the flexural behavior of wood in transverse direction. The quarter-swan showed the largest MOE and MOR. The ray tissue aligned against the loading might play an important role in the restriction of the cell wall deformation. The rift-sawn specimen showed smallest MOE and MOR and its reason might be the loading of specimen in the in-plane off-axial direction, which induces the shear deformation of the cell wall. For all three types of specimens, the fracture has high possibility occurring at the tension part that showed large cell deformation. Therefore, the novel method developed in this study might be adapted to the fractures prediction of the wood specimen. Furthermore, with varying the test wood species such approach provides a great possibility to unveil the relationship between anatomical features and mechanical behavior of wood in transverse direction.
+A deep-learning based semantic segmentation approach (U-Net) was used to partition the anatomical features in the cross-section of hinoki (*Chamaecyparis obtusa*) wood during a micro three-point bending test. Using the Crocker–Grier linking algorithm, thousands of cells were successfully extracted, and several parameters (area, eccentricity, fitted ellipse aspect ratio, bounding box aspect ratio) were used to evaluate the intensity of the cells’ deformation. Thus, the 2D map of the deformation intensity distribution was constructed. By analyzing flat-sawn, quarter-sawn, and rift-sawn specimens, it was confirmed that the annual ring orientation affects the flexural behavior of wood in the transverse direction. The quarter-sawn specimens exhibited the largest modulus of elasticity (MOE) and modulus of rupture (MOR). The ray tissue aligned against the load may have contributed to the restriction of cell wall deformation. The rift-sawn specimens exhibited the smallest MOE and MOR, possibly owing to the loading of the specimen in the in-plane off-axial direction, which induced the shear deformation of the cell wall. For all three specimen types, the fracture had high occurrence probability in the tension part of the specimen, which exhibited large cell deformation. Therefore, the proposed method can be adapted to the prediction of wood specimen fractures. With different test wood species, this approach can be of great help in elucidating the relationship between the anatomical features and the mechanical behavior of wood in the transverse direction to improve
+the effective utilization of wood resources.
 
 ## Keywords:
 
