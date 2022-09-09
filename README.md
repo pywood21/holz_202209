@@ -22,7 +22,7 @@ segmentation model has been built to conduct partition of anatomical
 features, and their local deformation during the micro three-point bending test
 were precisely analyzed.
 
-The results have been accepted at Holzforschung (https:''doi.org/10.1515/hf-2022-0096), and the this repository provides necessary scripts for tracking and analyzing the cell deformation.
+The results have been accepted at Holzforschung (https://doi.org/10.1515/hf-2022-0096), and the this repository provides necessary scripts for tracking and analyzing the cell deformation.s
 
 ### What is in this repository ?
 
