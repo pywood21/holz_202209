@@ -13,3 +13,4 @@ data/tracked_cell.npy
 data/strain_stress.npz
 data/deformation_analysis.npz
 data/image_sequence.npy
+.DS_Store
