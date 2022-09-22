@@ -17,16 +17,16 @@ wood science, it provides a possibility to simultaneously analyze almost all
 local changes in anatomical features and their interaction during the mechanical
 test.
 
-Therefore, as a first try in this study, the semantic
+Therefore, as the first try in this study, the semantic
 segmentation model has been built to conduct partition of anatomical
 features, and their local deformation during the micro three-point bending test
 were precisely analyzed.
 
-The results have been accepted at Holzforschung (https://doi.org/10.1515/hf-2022-0096), and the this repository provides necessary scripts for tracking and analyzing the cell deformation.s
+The results have been accepted at Holzforschung (https://doi.org/10.1515/hf-2022-0096), and this repository provides scripts for tracking and analyzing cell deformation.
 
 ### What is in this repository ?
 
-The repository contains the necessary codes that used for analyzing the intensity of cell wall deformation of wood specimen during micro three-point bending test. They are two jupyter notebooks:
+The repository contains the necessary codes that used for analyzing the intensity of cell wall deformation of wood specimen during the micro three-point bending test. They are two jupyter notebooks:
 
 ```
 1. cell_wall_deformation_analysis.ipynb
